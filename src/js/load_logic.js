@@ -16,5 +16,10 @@ $(function() {
     $inputs.each(function() {
       field[this.name] = $(this).val();
     });
+
+  // Earthquakes within 'radius', and 'timeframe'
+
+  // Strongest Earthquake
+
   });
 });
