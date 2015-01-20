@@ -10,7 +10,7 @@ $(function() {
 
   // Form Data
     $inputs.each(function() {
-        values[this.name] = $(this).val();
+        field[this.name] = $(this).val();
     });
   });
 });
