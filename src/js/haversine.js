@@ -1,6 +1,6 @@
 /**
-* haversine.js: contains necessary functions needed to compute the distance between
-*               two GPS coordinate points (longitude, latitude).
+* haversine.js: contains necessary global functions needed to compute the distance
+*               between two GPS coordinate points (longitude, latitude).
 */
 
 /**
