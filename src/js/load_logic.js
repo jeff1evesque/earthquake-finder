@@ -7,6 +7,7 @@ $(function() {
   $('form').submit(function() {
   // Local Variables
     var field = {};
+    var $inputs = $('form input');
 
   // Form Data
     $inputs.each(function() {
