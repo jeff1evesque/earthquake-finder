@@ -8,6 +8,12 @@ $(function() {
     event.preventDefault();
 
   // Local Variables
-    var values = $('form').serialize();
+    var field = {};
+    var $inputs = $('form input');
+
+  // Form Data
+    $inputs.each(function() {
+      field[this.name] = $(this).val();
+    });
   });
 });
