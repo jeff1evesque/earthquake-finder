@@ -4,5 +4,13 @@
 */
 
 $(function() {
+  $('form').submit(function() {
+  // Local Variables
+    var field = {};
 
+  // Form Data
+    $inputs.each(function() {
+        values[this.name] = $(this).val();
+    });
+  });
 });
