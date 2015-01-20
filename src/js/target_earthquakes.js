@@ -11,6 +11,6 @@
 /**
  * target_asset: converts degrees to radians.
  */
-  var target_asset = function(origin_longitude, origin_latitude, radius, timeframe) {
+  var target_asset = function(origin_longitude, origin_latitude, radius, negDays) {
   };
 
