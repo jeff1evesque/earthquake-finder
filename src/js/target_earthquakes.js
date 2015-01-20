@@ -1,6 +1,6 @@
 /**
 * target_earthquakes.js: contains global function(s) needed to determine an array
-*                        of earthquakes within supplied restriction.
+*                        of earthquakes within supplied restriction(s).
 */
 
 /**
