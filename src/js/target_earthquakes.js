@@ -14,4 +14,3 @@
  */
   var return_earthquakes = function(origin_longitude, origin_latitude, radius, negDays) {
   };
-
