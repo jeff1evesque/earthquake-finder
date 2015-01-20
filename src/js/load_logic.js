@@ -4,7 +4,7 @@
 */
 
 $(function() {
-  $('form').submit(function() {
+  $('form').on('submit', function(event) {
   // Local Variables
     var values = $('form').serialize();
   });
