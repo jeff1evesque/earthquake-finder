@@ -14,7 +14,9 @@
  * getDistance: computes distance between two GPS coordinate points.
  *
  * @radius, earth's mean radius (m)
- * @distance, distance between two GPS coordinate points (m)
+ * @a, haversine equation
+ * @c, haversine equation
+ * @d, haversine equation, distance between two GPS coordinate points (m)
  */
   var getDistance = function(p1, p2) {
     var radius = 6378137;
@@ -24,6 +26,6 @@
       Math.cos(rad(p1.lat())) * Math.cos(rad(p2.lat())) *
       Math.sin(dLong / 2) * Math.sin(dLong / 2);
     var c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
-    var distance = radius * c;
-    return distance;
+    var d = radius * c;
+    return d;
   };
