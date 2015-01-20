@@ -6,6 +6,6 @@
 /**
  * rad: converts degrees to radians.
  */
-var rad = function(x) {
-  return x * Math.PI / 180;
-};
+  var rad = function(x) {
+    return x * Math.PI / 180;
+  };
