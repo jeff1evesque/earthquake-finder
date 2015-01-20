@@ -9,6 +9,7 @@ $(function() {
 
   // Local Variables
     var field = {};
+    var earthquakes = [];
     var $inputs = $('form input');
 
   // Form Data
