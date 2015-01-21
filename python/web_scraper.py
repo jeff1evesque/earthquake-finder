@@ -2,10 +2,11 @@
 
 ## @web_scraper.py
 #  This file scrapes the content of an external webpage.
-from lxml import html
-import requests, sys
+import sys, urllib2, json
 
 if len( sys.argv ) > 0:
-  # retrieve webpage, store the corresponding content
-  webpage = requests.get(sys.argv[1])
-  content = html.fromstring(webpage.text)
+  # open given url, store the corresponding json response
+  response = urllib2.urlopen(sys.argv[1])
+  data     = json.load(response)
+
+  print data
