@@ -7,5 +7,5 @@ import requests, sys
 
 if len( sys.argv ) > 0:
   # retrieve webpage, store the corresponding content
-  page = requests.get(sys.argv[1])
-  tree = html.fromstring(page.text)
+  webpage = requests.get(sys.argv[1])
+  content = html.fromstring(page.text)
