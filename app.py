@@ -12,6 +12,11 @@ app = Flask(__name__)
 def index():
   return render_template('index.html')
 
+@app.route('/json_scraper/', methods=['POST', 'GET'])
+def json_scraper():
+  if request.method == 'POST':
+    return request.POST
+
 # Execute: run application directly, instead of import
 if __name__ == '__main__':
   app.run(
