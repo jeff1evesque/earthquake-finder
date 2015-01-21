@@ -6,12 +6,11 @@
 import sys, urllib2, json
 
 ## scraper: scrape the content of provided url.
-def scraper():
-  if len( sys.argv ) > 0:
-    # open given url, store the corresponding json response
-    response = urllib2.urlopen(sys.argv[1])
-    data     = json.load(response)
-    response.close()
+def scraper(url):
+  # open given url, store the corresponding json response
+  response = urllib2.urlopen(url)
+  data     = json.loads(response)
+  response.close()
 
-    # return content
-    print data
+  # return content
+  return data
