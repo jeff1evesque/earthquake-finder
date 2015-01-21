@@ -18,7 +18,7 @@ $(function() {
     });
 
   // Dataset
-    var dataset = dataset( field['gps_dataset'] );
+    var dataset = dataset_parser( field['gps_dataset'] );
 
   // Earthquakes within 'radius', and 'timeframe'
 
