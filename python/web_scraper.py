@@ -9,6 +9,7 @@ if len( sys.argv ) > 0:
   # open given url, store the corresponding json response
   response = urllib2.urlopen(sys.argv[1])
   data     = json.load(response)
+  response.close()
 
   # return content
   print data
