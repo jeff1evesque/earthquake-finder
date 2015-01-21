@@ -11,12 +11,14 @@ $(function() {
     var field = {};
     var earthquakes = [];
     var $inputs = $('form input');
-    var dataset = dataset_earthquake();
 
   // Form Data
     $inputs.each(function() {
       field[this.name] = $(this).val();
     });
+
+  // Dataset
+    var dataset = dataset_earthquake( field['gps_dataset'] );
 
   // Earthquakes within 'radius', and 'timeframe'
 
