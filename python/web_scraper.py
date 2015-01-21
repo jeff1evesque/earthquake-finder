@@ -8,4 +8,4 @@ import requests, sys
 if len( sys.argv ) > 0:
   # retrieve webpage, store the corresponding content
   webpage = requests.get(sys.argv[1])
-  content = html.fromstring(page.text)
+  content = html.fromstring(webpage.text)
