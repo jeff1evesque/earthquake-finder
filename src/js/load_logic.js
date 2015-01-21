@@ -11,6 +11,7 @@ $(function() {
     var field = {};
     var earthquakes = [];
     var $inputs = $('form input');
+    var dataset = dataset_earthquake();
 
   // Form Data
     $inputs.each(function() {
