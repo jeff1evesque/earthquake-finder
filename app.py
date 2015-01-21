@@ -3,6 +3,7 @@
 #    allows the presentation of (asynchronous) content.
 from flask import Flask, render_template, request, jsonify
 from package.json_scraper import scrape as jScraper
+import json
 
 # Initialize: create flask instance
 app = Flask(__name__)
@@ -15,7 +16,7 @@ def index():
 @app.route('/json_scraper/', methods=['POST', 'GET'])
 def json_scraper():
   if request.method == 'POST':
-    return request.POST
+    return json.dumps(request.form)
 
 # Execute: run application directly, instead of import
 if __name__ == '__main__':
