@@ -20,8 +20,9 @@ def json_scraper():
     dataset = scrape(request.form['gps_dataset'])
 
     # parse dataset for target(s) within specified parameters
-    target  = Data_Iterator( dataset, request.form['gps_longitude'], request.form['gps_latitude'], request.form['gps_radius'], request.form['daysBack'] )
+    target = Data_Iterator( dataset, request.form['gps_longitude'], request.form['gps_latitude'], request.form['gps_radius'], request.form['daysBack'] )
     target.iterator()
+    target_return = target.get_target()
 
     # return result(s) to browser
 
