@@ -17,6 +17,9 @@ $(function() {
       field[this.name] = $(this).val();
     });
 
+  // Dataset
+    var dataset = dataset_parser( field['gps_dataset'] );
+
   // Earthquakes within 'radius', and 'timeframe'
 
   // Strongest Earthquake
