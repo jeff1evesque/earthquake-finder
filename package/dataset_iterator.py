@@ -12,14 +12,14 @@ class Data_Iterator
   self.dataset = dataset
   self.target  = []
 
-  ## iterator: iterate given dataset, and store earthquakes within the specified radius,
+  ## iterator: iterate a given dataset, and store earthquakes within the specified radius,
   #            and timeframe.
   def iterator(self):
 
-  ## validator: validate subset(s) of given dataset. This method is called within the
-  #             above 'iterator' method.
+  ## validator: validate subset(s) of given the dataset. The above 'iterator' method,
+  #             implements this method.
   def validator(self):
 
-  ## get_target: returns a list of earthquakes within the supplied parameters.
+  ## get_target: return a list of earthquakes within the supplied parameters.
   def get_target(self):
     return self.target
