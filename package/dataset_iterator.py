@@ -24,8 +24,8 @@ class Data_Iterator:
   #             implements this method.
   def validator(self):
 
-  ## get_target: return a list of earthquakes within the supplied parameters.
-  def get_target(self):
+  ## get_targets: return a list of earthquakes within the supplied parameters.
+  def get_targets(self):
     return self.target
 
   ## get_largest_target: return largest single earthquake within the supplied parameters.
