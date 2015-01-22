@@ -1,7 +1,7 @@
 ## @app.py
 #  This file loads corresponding logic, and html template file(s), which
 #    allows the presentation of (asynchronous) content.
-from flask import Flask, render_template, request, jsonify
+from flask import Flask, render_template, request
 from package.json_scraper import scrape
 
 # Initialize: create flask instance
