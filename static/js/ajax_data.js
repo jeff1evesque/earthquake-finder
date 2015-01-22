@@ -1,7 +1,8 @@
 /**
-* load_logic.js: stores HTML form data into jQuery variables, then determine strongest
-*                earthquake within provided 'radius', and 'timeframe', respectively.
-*/
+ * ajax_data.js: store HTML form data into jQuery variables. Then, determine the
+ *               strongest earthquake within the provided 'radius', and 'timeframe'
+ *               parameters, using server-side logic.
+ */
 
 $(function() {
   $('form').on('submit', function(event) {
