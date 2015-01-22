@@ -8,14 +8,7 @@ $(function() {
     event.preventDefault();
 
   // Local Variables
-    var field = {};
-    var earthquakes = [];
-    var $inputs = $('form input');
-
-  // Form Data
-    $inputs.each(function() {
-      field[this.name] = $(this).val();
-    });
+    var form_data = $('form').serialize();
 
     $.ajax({
       type: 'POST',
