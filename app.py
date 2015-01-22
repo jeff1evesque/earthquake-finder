@@ -22,7 +22,7 @@ def json_scraper():
     # parse dataset for target(s) within specified parameters
     target = Data_Iterator( dataset, request.form['gps_longitude'], request.form['gps_latitude'], request.form['gps_radius'], request.form['daysBack'] )
     target.iterator()
-    target_return = target.get_target()
+    target_return = target.get_largest_target()
 
     # return result(s) to browser
 
