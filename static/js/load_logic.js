@@ -17,6 +17,20 @@ $(function() {
       field[this.name] = $(this).val();
     });
 
+    $.ajax({
+      type: 'POST',
+      url: '/json_scraper/',
+      data: form_data,
+      beforeSend: function() {
+
+      }
+    }).done(function(data) {
+      console.log( JSON.stringify( data ) );
+    }).fail(function(jqXHR, textStatus, errorThrown) {
+      console.log('Error Thrown: '+errorThrown);
+      console.log('Error Status: '+textStatus);
+    });
+
   // Dataset
     var dataset = dataset_parser( field['gps_dataset'] );
 
