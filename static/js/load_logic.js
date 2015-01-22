@@ -8,21 +8,22 @@ $(function() {
     event.preventDefault();
 
   // Local Variables
-    var field = {};
-    var earthquakes = [];
-    var $inputs = $('form input');
+    var form_data = $('form').serialize();
 
-  // Form Data
-    $inputs.each(function() {
-      field[this.name] = $(this).val();
+  // Compute Largest Earthquake
+    $.ajax({
+      type: 'POST',
+      url: '/json_scraper/',
+      data: form_data,
+      beforeSend: function() {
+
+      }
+    }).done(function(data) {
+      console.log( data );
+    }).fail(function(jqXHR, textStatus, errorThrown) {
+      console.log('Error Thrown: '+errorThrown);
+      console.log('Error Status: '+textStatus);
     });
-
-  // Dataset
-    var dataset = dataset_parser( field['gps_dataset'] );
-
-  // Earthquakes within 'radius', and 'timeframe'
-
-  // Strongest Earthquake
 
   });
 });
