@@ -3,6 +3,7 @@
 #    allows the presentation of (asynchronous) content.
 from flask import Flask, render_template, request
 from package.json_scraper import scrape
+from package.dataset_iterator import Data_Iterator
 
 # Initialize: create flask instance
 app = Flask(__name__)
