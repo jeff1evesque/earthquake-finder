@@ -10,6 +10,7 @@ $(function() {
   // Local Variables
     var form_data = $('form').serialize();
 
+  // Compute Largest Earthquake
     $.ajax({
       type: 'POST',
       url: '/json_scraper/',
