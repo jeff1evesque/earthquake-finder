@@ -22,3 +22,4 @@ class Data_Iterator
 
   ## get_target: returns a list of earthquakes within the supplied parameters.
   def get_target(self):
+    return self.target
