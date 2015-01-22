@@ -27,3 +27,6 @@ class Data_Iterator:
   ## get_target: return a list of earthquakes within the supplied parameters.
   def get_target(self):
     return self.target
+
+  ## get_largest_target: return largest single earthquake within the supplied parameters.
+  def get_largest_target(self):
