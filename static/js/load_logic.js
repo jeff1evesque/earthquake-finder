@@ -24,12 +24,5 @@ $(function() {
       console.log('Error Status: '+textStatus);
     });
 
-  // Dataset
-    var dataset = dataset_parser( field['gps_dataset'] );
-
-  // Earthquakes within 'radius', and 'timeframe'
-
-  // Strongest Earthquake
-
   });
 });
