@@ -2,14 +2,14 @@
 
 ## @json_scraper.py
 #  This file scrapes the content of an external webpage, and returns the
-#      parsed json response to javascript (retriever_dataset.js) via AJAX.
-import sys, urllib2
+#      parsed response to javascript (retriever_dataset.js) via AJAX.
+import urllib2
 
 ## scrape: scrape the content of provided url.
 def scrape(url):
   # open given url, store the corresponding json response
   response = urllib2.urlopen(url)
-  data     = json.loads(response)
+  data     = response.read()
   response.close()
 
   # return content
