@@ -16,8 +16,8 @@ class Data_Iterator
   #            and timeframe.
   def iterator(self):
 
-  ## validator: validate subset(s) of given dataset. This is specifically called within
-  #             the above 'iterator' method.
+  ## validator: validate subset(s) of given dataset. This method is called within the
+  #             above 'iterator' method.
   def validator(self):
 
   ## get_target: returns a list of earthquakes within the supplied parameters.
