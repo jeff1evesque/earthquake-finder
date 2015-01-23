@@ -6,9 +6,11 @@
 from math import radians, cos, sin, asin, sqrt
 
 ## get_distance: computes the distance between two GPS coordinate points using the
-#                haversine formula
+#                haversine formula.
+#
+#  Note: this function returns the haversine distance in meters.
 def get_distance(p1, p2):
-  # radius of the earth
+  # radius of the earth (meters)
   radius = 6378137
 
   # convert decimal degrees to radians
