@@ -30,7 +30,7 @@ class Data_Iterator:
       location    = val['properties']['place']
 
       data_instance = {'id': id, 'coordinates': coordinates, 'magnitude': magnitude, 'time': time, 'location': location}
-      data_check  = validator(data_instance)
+      data_check  = self.validator(data_instance)
 
       if self.validate_date(time) and data_check:
         self.target.append( {'id': id, 'coordinates': coordinates, 'magnitude': magnitude, 'time': time, 'location': location} )
