@@ -47,7 +47,7 @@ class Data_Iterator:
       validate(data_instance, jsonschema_data())
       return True
     except Exception, error:
-      self.list_error.append( {'class': 'Data_Iterator', 'method': 'validator', 'msg': error} )
+      self.list_error.append( {'class': 'Data_Iterator', 'method': 'validate_dataset', 'msg': error} )
       return False
 
   ## validate_date: validate if earthquake is within specified number of days.
@@ -64,11 +64,15 @@ class Data_Iterator:
   ## get_targets: return a list of earthquakes within the supplied parameters.
   def get_targets(self):
     if len(self.target) > 0: return self.target
-    else: return self.list_error
+    else:
+      self.list_error.append( {'class': 'Data_Iterator', 'method': 'get_targets', 'msg': 'no instance earthquake instance recorded'} )
+      return self.list_error
 
   ## get_largest_target: return largest single earthquake within the supplied parameters.
   def get_largest_target(self):
     if len(self.target) > 0:
       largest_magnitude = max( self.target, key=lambda x:x['magnitude'] )
       return largest_magnitude
-    else: return self.list_error
+    else:
+      self.list_error.append( {'class': 'Data_Iterator', 'method': 'get_largest_target', 'msg': 'no instance earthquake instance recorded'} )
+      return self.list_error
