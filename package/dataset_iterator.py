@@ -34,6 +34,10 @@ class Data_Iterator:
   def validator(self):
     return 'STUB'
 
+  ## validate_date: validate if earthquake is within specified number of days
+  def validate_date(self):
+  
+
   ## get_targets: return a list of earthquakes within the supplied parameters.
   def get_targets(self):
     return self.target
