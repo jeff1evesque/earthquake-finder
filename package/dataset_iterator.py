@@ -21,7 +21,7 @@ class Data_Iterator:
   #            and timeframe.
   def iterator(self):
     for val in self.dataset['features']:
-      id          = val['geometry']['id']
+      id          = val['id']
       coordinates = val['geometry']['coordinates']
       magnitude   = val['properties']['mag']
       time        = val['properties']['time']
