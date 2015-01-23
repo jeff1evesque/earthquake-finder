@@ -21,7 +21,7 @@ class Data_Iterator:
   #            and timeframe.
   def iterator(self):
     for val in self.dataset['features']:
-      self.target.append(val)
+      self.target.append(val['geometry']['coordinates'])
 
   ## validator: validate subset(s) of given the dataset. The above 'iterator' method,
   #             implements this method.
