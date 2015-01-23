@@ -40,8 +40,8 @@ class Data_Iterator:
   #  @current_time, the current time in milliseconds.
   #  @allowed_difference, number of days in milliseconds.
   def validate_date(self, earthquake_time):
-    current_time = int(round(time.time() * 1000))
-    difference   = self.daysBack * 86400000
+    current_time       = int(round(time.time() * 1000))
+    allowed_difference = self.daysBack * 86400000
 
     if ( current_time - earthquake_time < allowed_difference ): return True
     else: return False
