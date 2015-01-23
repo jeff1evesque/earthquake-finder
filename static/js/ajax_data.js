@@ -17,9 +17,10 @@ $(function() {
       url: '/json_scraper/',
       data: form_data,
       beforeSend: function() {
-
+        var spinner = new ajaxLoader( $(event.currentTarget) );
       }
     }).done(function(data) {
+      $('form .ajax_overlay').fadeOut(200, function(){ $(this).remove() });
       console.log( data );
     }).fail(function(jqXHR, textStatus, errorThrown) {
       console.log('Error Thrown: '+errorThrown);
