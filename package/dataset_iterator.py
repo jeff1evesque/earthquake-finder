@@ -12,12 +12,14 @@ from package.haversine import get_distance
 class Data_Iterator:
 
   ## constructor:
+  #
+  # @self.radius, the supplied radius (miles) is converted into meters
   def __init__(self, dataset, longitude, latitude, radius, daysBack):
     self.target   = []
     self.dataset  = dataset
     self.origin_longitude = longitude
     self.origin_latitude  = latitude
-    self.radius   = radius
+    self.radius   = radius * 1609.34
     self.daysBack = daysBack
 
     self.list_error = []
