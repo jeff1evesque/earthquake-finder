@@ -38,7 +38,7 @@ class Data_Iterator:
         self.target.append( {'id': id, 'coordinates': coordinates, 'magnitude': magnitude, 'time': time, 'location': location} )
 
   ## validator_dataset: validate subset(s) of given the dataset. The above 'iterator' method,
-  #                  implements this method.
+  #                     implements this method.
   def validator_dataset(self, data_instance):
     try:
       validate(data_instance, jsonschema_data())
