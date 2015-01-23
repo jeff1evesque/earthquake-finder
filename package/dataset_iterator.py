@@ -6,6 +6,7 @@
 import json, time
 from jsonschema import validate
 from package.jsonschema_definitions import jsonschema_data
+from package.haversine import get_distance
 
 ## Class: Data_Iterator
 class Data_Iterator:
