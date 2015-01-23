@@ -6,18 +6,21 @@
 import json, time
 from jsonschema import validate
 from package.jsonschema_definitions import jsonschema_data
+from package.haversine import get_distance
 
 ## Class: Data_Iterator
 class Data_Iterator:
 
   ## constructor:
+  #
+  # @self.radius, the supplied radius (miles) is converted into meters
   def __init__(self, dataset, longitude, latitude, radius, daysBack):
     self.target   = []
     self.dataset  = dataset
-    self.origin_longitude = longitude
-    self.origin_latitude  = latitude
-    self.radius   = radius
-    self.daysBack = daysBack
+    self.origin_longitude = float(longitude)
+    self.origin_latitude  = float(latitude)
+    self.radius   = float(radius) * 1609.34
+    self.daysBack = int(daysBack)
 
     self.list_error = []
 
@@ -36,8 +39,12 @@ class Data_Iterator:
       data_instance = {'id': id, 'coordinates': coordinates, 'magnitude': magnitude, 'time': time, 'location': location}
       data_check  = self.validate_dataset(data_instance)
 
+      # create coordinate variables
+      coordinate_1 = {'longitude': self.origin_longitude, 'latitude': self.origin_latitude}
+      coordinate_2 = {'longitude': coordinates[0], 'latitude': coordinates[1]}
+
       # append dataset instance to target list, if within radius, and timeframe
-      if self.validate_date(time) and data_check:
+      if self.validate_date(time) and data_check and self.validate_radius(coordinate_1, coordinate_2):
         self.target.append( {'id': id, 'coordinates': coordinates, 'magnitude': magnitude, 'time': time, 'location': location} )
 
   ## validate_dataset: validate subset(s) of given the dataset. The above 'iterator' method,
@@ -61,18 +68,23 @@ class Data_Iterator:
     if ( current_time - earthquake_time < allowed_difference ): return True
     else: return False
 
+  ## validate_radius: validate given coordinates witin the supplied radius
+  def validate_radius(self, p1, p2):
+    if get_distance(p1, p2) < self.radius: return True
+    else: return False
+
   ## get_targets: return a list of earthquakes within the supplied parameters.
   def get_targets(self):
-    if len(self.target) > 0: return self.target
+    if len(self.target) > 0: return {'data': self.target, 'error': None}
     else:
       self.list_error.append( {'class': 'Data_Iterator', 'method': 'get_targets', 'msg': 'no instance earthquake instance recorded'} )
-      return self.list_error
+      return {'data': None, 'error': self.list_error}
 
   ## get_largest_target: return largest single earthquake within the supplied parameters.
   def get_largest_target(self):
     if len(self.target) > 0:
       largest_magnitude = max( self.target, key=lambda x:x['magnitude'] )
-      return largest_magnitude
+      return {'data': largest_magnitude, 'error': None}
     else:
       self.list_error.append( {'class': 'Data_Iterator', 'method': 'get_largest_target', 'msg': 'no instance earthquake instance recorded'} )
-      return self.list_error
+      return {'data': None, 'error': self.list_error}
