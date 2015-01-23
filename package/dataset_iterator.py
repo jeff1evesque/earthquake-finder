@@ -17,8 +17,8 @@ class Data_Iterator:
   def __init__(self, dataset, longitude, latitude, radius, daysBack):
     self.target   = []
     self.dataset  = dataset
-    self.origin_longitude = longitude
-    self.origin_latitude  = latitude
+    self.origin_longitude = float(longitude)
+    self.origin_latitude  = float(latitude)
     self.radius   = float(radius) * 1609.34
     self.daysBack = daysBack
 
