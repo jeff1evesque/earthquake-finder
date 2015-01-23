@@ -36,7 +36,7 @@ class Data_Iterator:
 
   ## validate_date: validate if earthquake is within specified number of days
   def validate_date(self, time):
-    current_time = time.time()
+    current_time = int(round(time.time() * 1000))
 
   ## get_targets: return a list of earthquakes within the supplied parameters.
   def get_targets(self):
