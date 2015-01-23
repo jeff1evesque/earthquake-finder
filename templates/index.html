@@ -12,17 +12,17 @@
     <form>
       <fieldset>
         <legend>GPS Coordinate</legend>
-        <input type='text' name='gps_longitude' placeholder='Longitude Value'>
-        <input type='text' name='gps_latitude' placeholder='Latitude Value'>
+        <input type='text' name='gps_longitude' placeholder='Longitude Value' value='-122.166224'>
+        <input type='text' name='gps_latitude' placeholder='Latitude Value' value='37.452255'>
       </fieldset>
       <fieldset>
         <legend>Dataset</legend>
-        <input type='text' name='gps_dataset' placeholder='Enter URL'>
+        <input type='text' name='gps_dataset' placeholder='Enter URL' value='http://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/all_month.geojson'>
       </fieldset>
       <fieldset>
         <legend>Parameters</legend>
-        <input type='text' name='gps_radius' placeholder='Acceptable Radius'>
-        <input type='text' name='daysBack' placeholder='Search # Days Back'>
+        <input type='text' name='gps_radius' placeholder='Acceptable Radius (mi)' value='100'>
+        <input type='text' name='daysBack' placeholder='Search # Days Back' value='7'>
       </fieldset>
       <input type='submit' class='button_submit'>
     </form>
