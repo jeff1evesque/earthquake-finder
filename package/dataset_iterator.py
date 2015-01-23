@@ -20,7 +20,7 @@ class Data_Iterator:
     self.origin_longitude = float(longitude)
     self.origin_latitude  = float(latitude)
     self.radius   = float(radius) * 1609.34
-    self.daysBack = daysBack
+    self.daysBack = int(daysBack)
 
     self.list_error = []
 
