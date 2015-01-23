@@ -33,8 +33,12 @@ class Data_Iterator:
 
   ## validator: validate subset(s) of given the dataset. The above 'iterator' method,
   #             implements this method.
-  def validator(self):
-    return 'STUB'
+  def validator(self, data_instance):
+    try:
+      validate(data_instance, jsonschema_data())
+      return True
+    except Exception, error:
+      return False
 
   ## validate_date: validate if earthquake is within specified number of days.
   #
