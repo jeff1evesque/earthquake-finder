@@ -20,9 +20,14 @@ $(function() {
         var spinner = new ajaxLoader( $(event.currentTarget) );
       }
     }).done(function(data) {
+    // Remove AJAX Overlay
       $('form .ajax_overlay').fadeOut(200, function(){ $(this).remove() });
-      console.log( data );
+    // Append Results
+      $('.result').remove();
+      $('.fieldset_parameters').after( '<p class="result">' + data + '</p>' );
     }).fail(function(jqXHR, textStatus, errorThrown) {
+      $('.result').remove();
+      $('.fieldset_parameters').after( '<p class="result error">Error: Could not submit request. Please review the browser 'console.log' message(s)</p>' );
       console.log('Error Thrown: '+errorThrown);
       console.log('Error Status: '+textStatus);
     });
