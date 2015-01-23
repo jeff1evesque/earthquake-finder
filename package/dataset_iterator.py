@@ -3,7 +3,7 @@
 ## @dataset_iterator.py
 #  This file iterates a given dataset, and returns a list of dict records, of earthquakes
 #      within the supplied parameters (i.e. radius, timeframe).
-import json
+import json, time
 
 ## Class: Data_Iterator
 class Data_Iterator:
@@ -35,8 +35,8 @@ class Data_Iterator:
     return 'STUB'
 
   ## validate_date: validate if earthquake is within specified number of days
-  def validate_date(self):
-  
+  def validate_date(self, time):
+    current_time = time.time()
 
   ## get_targets: return a list of earthquakes within the supplied parameters.
   def get_targets(self):
