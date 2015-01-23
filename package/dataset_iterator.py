@@ -55,3 +55,5 @@ class Data_Iterator:
     if len(self.target) > 0:
       largest_magnitude = max( self.target, key=lambda x:x['magnitude'] )
       return largest_magnitude
+    else:
+      return None
