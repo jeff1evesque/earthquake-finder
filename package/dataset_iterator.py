@@ -25,15 +25,18 @@ class Data_Iterator:
   #            and timeframe.
   def iterator(self):
     for val in self.dataset['features']:
+      # elements from supplied dataset
       id          = val['id']
       coordinates = val['geometry']['coordinates']
       magnitude   = val['properties']['mag']
       time        = val['properties']['time']
       location    = val['properties']['place']
 
+      # create custom dataset instance, and validate
       data_instance = {'id': id, 'coordinates': coordinates, 'magnitude': magnitude, 'time': time, 'location': location}
       data_check  = self.validator_dataset(data_instance)
 
+      # append dataset instance to target list, if within radius, and timeframe
       if self.validate_date(time) and data_check:
         self.target.append( {'id': id, 'coordinates': coordinates, 'magnitude': magnitude, 'time': time, 'location': location} )
 
