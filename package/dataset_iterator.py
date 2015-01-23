@@ -24,8 +24,9 @@ class Data_Iterator:
       coordinates = val['geometry']['coordinates']
       magnitude   = val['properties']['mag']
       time        = val['properties']['time']
+      location    = val['properties']['place']
 
-      self.target.append( {'coordinates': coordinates, 'magnitude': magnitude, 'time': time} )
+      self.target.append( {'coordinates': coordinates, 'magnitude': magnitude, 'time': time, 'location': location} )
 
   ## validator: validate subset(s) of given the dataset. The above 'iterator' method,
   #             implements this method.
