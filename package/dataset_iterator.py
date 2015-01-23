@@ -32,14 +32,14 @@ class Data_Iterator:
       location    = val['properties']['place']
 
       data_instance = {'id': id, 'coordinates': coordinates, 'magnitude': magnitude, 'time': time, 'location': location}
-      data_check  = self.validator(data_instance)
+      data_check  = self.validator_dataset(data_instance)
 
       if self.validate_date(time) and data_check:
         self.target.append( {'id': id, 'coordinates': coordinates, 'magnitude': magnitude, 'time': time, 'location': location} )
 
-  ## validator: validate subset(s) of given the dataset. The above 'iterator' method,
-  #             implements this method.
-  def validator(self, data_instance):
+  ## validator_dataset: validate subset(s) of given the dataset. The above 'iterator' method,
+  #                  implements this method.
+  def validator_dataset(self, data_instance):
     try:
       validate(data_instance, jsonschema_data())
       return True
