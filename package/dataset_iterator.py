@@ -63,10 +63,11 @@ class Data_Iterator:
   #  @allowed_difference, number of days in milliseconds.
   def validate_date(self, earthquake_time):
     current_time       = int(round(time.time() * 1000))
-    allowed_difference = self.daysBack * 86400000
+    difference_allowed = self.daysBack * 86400000
+    difference_actual  = current_time - earthquake_time
 
-    if ( current_time - earthquake_time < allowed_difference ): return True
-    else: return False
+    if ( difference_actual < difference_allowed ): return {'status': True, 'difference_distance': difference_actual}
+    else: return {'status': False, 'difference_distance': difference_actual}
 
   ## validate_radius: validate given coordinates witin the supplied radius
   def validate_radius(self, p1, p2):
