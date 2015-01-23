@@ -4,6 +4,8 @@
 #  This file iterates a given dataset, and returns a list of dict records, of earthquakes
 #      within the supplied parameters (i.e. radius, timeframe).
 import json, time
+from jsonschema import validate
+from package.jsonschema_definitions import jsonschema_data
 
 ## Class: Data_Iterator
 class Data_Iterator:
@@ -17,23 +19,36 @@ class Data_Iterator:
     self.radius   = radius
     self.daysBack = daysBack
 
+    self.list_error = []
+
   ## iterator: iterate a given dataset, and store earthquakes within the specified radius,
   #            and timeframe.
   def iterator(self):
     for val in self.dataset['features']:
+      # elements from supplied dataset
       id          = val['id']
       coordinates = val['geometry']['coordinates']
       magnitude   = val['properties']['mag']
       time        = val['properties']['time']
       location    = val['properties']['place']
 
-      if self.validate_date(time):
+      # create custom dataset instance, and validate
+      data_instance = {'id': id, 'coordinates': coordinates, 'magnitude': magnitude, 'time': time, 'location': location}
+      data_check  = self.validate_dataset(data_instance)
+
+      # append dataset instance to target list, if within radius, and timeframe
+      if self.validate_date(time) and data_check:
         self.target.append( {'id': id, 'coordinates': coordinates, 'magnitude': magnitude, 'time': time, 'location': location} )
 
-  ## validator: validate subset(s) of given the dataset. The above 'iterator' method,
-  #             implements this method.
-  def validator(self):
-    return 'STUB'
+  ## validate_dataset: validate subset(s) of given the dataset. The above 'iterator' method,
+  #                    implements this method.
+  def validate_dataset(self, data_instance):
+    try:
+      validate(data_instance, jsonschema_data())
+      return True
+    except Exception, error:
+      self.list_error.append( {'class': 'Data_Iterator', 'method': 'validate_dataset', 'msg': error} )
+      return False
 
   ## validate_date: validate if earthquake is within specified number of days.
   #
@@ -48,7 +63,10 @@ class Data_Iterator:
 
   ## get_targets: return a list of earthquakes within the supplied parameters.
   def get_targets(self):
-    return self.target
+    if len(self.target) > 0: return self.target
+    else:
+      self.list_error.append( {'class': 'Data_Iterator', 'method': 'get_targets', 'msg': 'no instance earthquake instance recorded'} )
+      return self.list_error
 
   ## get_largest_target: return largest single earthquake within the supplied parameters.
   def get_largest_target(self):
@@ -56,4 +74,5 @@ class Data_Iterator:
       largest_magnitude = max( self.target, key=lambda x:x['magnitude'] )
       return largest_magnitude
     else:
-      return None
+      self.list_error.append( {'class': 'Data_Iterator', 'method': 'get_largest_target', 'msg': 'no instance earthquake instance recorded'} )
+      return self.list_error
