@@ -19,6 +19,8 @@ class Data_Iterator:
     self.radius   = radius
     self.daysBack = daysBack
 
+    self.error = []
+
   ## iterator: iterate a given dataset, and store earthquakes within the specified radius,
   #            and timeframe.
   def iterator(self):
@@ -42,6 +44,7 @@ class Data_Iterator:
       validate(data_instance, jsonschema_data())
       return True
     except Exception, error:
+      self.error.append( {'class': 'Data_Iterator', 'method': 'validator', 'msg': error} )
       return False
 
   ## validate_date: validate if earthquake is within specified number of days.
