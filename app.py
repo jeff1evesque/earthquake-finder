@@ -4,6 +4,7 @@
 from flask import Flask, render_template, request
 from package.json_scraper import scrape
 from package.dataset_iterator import Data_Iterator
+import json
 
 # Initialize: create flask instance
 app = Flask(__name__)
@@ -25,7 +26,7 @@ def json_scraper():
     target_return = target.get_largest_target()
 
     # return result(s) to browser
-    return target_return
+    return json.dumps(target_return)
 
 # Execute: run application directly, instead of import
 if __name__ == '__main__':
