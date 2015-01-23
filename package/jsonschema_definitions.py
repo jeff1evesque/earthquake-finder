@@ -19,7 +19,8 @@ def jsonschema_data():
            'type': 'number',
            'minLength': 1,
          },
-         'minItems': 1
+         'minItems': 2,
+         'maxItems': 2
       },
       'magnitude': {
         'type': 'number',
