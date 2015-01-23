@@ -64,6 +64,11 @@ class Data_Iterator:
     if ( current_time - earthquake_time < allowed_difference ): return True
     else: return False
 
+  ## validate_radius: validate given coordinates witin the supplied radius
+  def validate_radius(self, p1, p2):
+    if get_distance(p1, p2) < self.radius: return True
+    else: return False
+
   ## get_targets: return a list of earthquakes within the supplied parameters.
   def get_targets(self):
     if len(self.target) > 0: return {'data': self.target, 'error': None}
