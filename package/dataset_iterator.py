@@ -52,5 +52,6 @@ class Data_Iterator:
 
   ## get_largest_target: return largest single earthquake within the supplied parameters.
   def get_largest_target(self):
-    largest_magnitude = max( self.target, key=lambda x:x['magnitude'] )      
-    return largest_magnitude
+    if len(self.target) > 0:
+      largest_magnitude = max( self.target, key=lambda x:x['magnitude'] )
+      return largest_magnitude
