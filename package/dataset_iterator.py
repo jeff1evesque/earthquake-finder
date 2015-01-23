@@ -34,7 +34,9 @@ class Data_Iterator:
   def validator(self):
     return 'STUB'
 
-  ## validate_date: validate if earthquake is within specified number of days
+  ## validate_date: validate if earthquake is within specified number of days.
+  #
+  #  Note: measurements are milliseconds since epoch.
   def validate_date(self, time):
     current_time = int(round(time.time() * 1000))
 
