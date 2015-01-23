@@ -22,7 +22,7 @@ class Data_Iterator:
   def iterator(self):
     for val in self.dataset['features']:
       coordinates = val['geometry']['coordinates']
-      magnitude   = val['properites']['mag']
+      magnitude   = val['properties']['mag']
 
       self.target.append( {'coordinates': coordinates, 'magnitude': magnitude} )
 
