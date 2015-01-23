@@ -34,15 +34,15 @@ class Data_Iterator:
 
       # create custom dataset instance, and validate
       data_instance = {'id': id, 'coordinates': coordinates, 'magnitude': magnitude, 'time': time, 'location': location}
-      data_check  = self.validator_dataset(data_instance)
+      data_check  = self.validate_dataset(data_instance)
 
       # append dataset instance to target list, if within radius, and timeframe
       if self.validate_date(time) and data_check:
         self.target.append( {'id': id, 'coordinates': coordinates, 'magnitude': magnitude, 'time': time, 'location': location} )
 
-  ## validator_dataset: validate subset(s) of given the dataset. The above 'iterator' method,
-  #                     implements this method.
-  def validator_dataset(self, data_instance):
+  ## validate_dataset: validate subset(s) of given the dataset. The above 'iterator' method,
+  #                    implements this method.
+  def validate_dataset(self, data_instance):
     try:
       validate(data_instance, jsonschema_data())
       return True
