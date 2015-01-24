@@ -4,6 +4,7 @@
 from flask import Flask, render_template, request
 from package.json_scraper import scrape
 from package.dataset_iterator import Data_Iterator
+from package.jsonschema_definitions import jsonschema_request
 import json
 
 # Initialize: create flask instance
@@ -17,11 +18,15 @@ def index():
 @app.route('/json_scraper/', methods=['POST', 'GET'])
 def json_scraper():
   if request.method == 'POST':
+    # validate request
+    dict_request = { 'gps_longitude': request.form['gps_longitude'], 'gps_latitude': request.form['gps_latitude'], 'gps_radius': request.form['gps_radius'], 'daysBack': request.form['daysBack'] }
+    validate(dict_request, jsonschema_request())
+
     # get dataset from external webpage
     dataset = scrape(request.form['gps_dataset'])
 
     # parse dataset for target(s) within specified parameters
-    target = Data_Iterator( dataset, request.form['gps_longitude'], request.form['gps_latitude'], request.form['gps_radius'], request.form['daysBack'] )
+    target = Data_Iterator( dataset, dict_request )
     target.iterator()
     target_return = target.get_largest_target()
 
