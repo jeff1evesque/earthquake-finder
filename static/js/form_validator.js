@@ -20,7 +20,7 @@
   jQuery.validator.addMethod(
     'positiveNumber',
     function(value, element, parameter) {
-      if Number(value) > 0 return True;
+      if (Number(value) > 0) return true;
       else return false;
   });
 
