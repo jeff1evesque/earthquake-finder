@@ -5,7 +5,7 @@
 #    daysBack values.
 import requests
 
-# validate_longitude: check if longitude is type 'float', and between [-180, 180].
+## validate_longitude: check if longitude is type 'float', and between [-180, 180].
 def validate_longitude(longitude):
   try:
     # check float
@@ -17,7 +17,7 @@ def validate_longitude(longitude):
   except ValueError, e:
     return {'status': False, 'error': 'longitude must be an integer, or decimal value.'}
 
-# validate_latitude: check if latitude is type 'float', and between [-90, 90].
+## validate_latitude: check if latitude is type 'float', and between [-90, 90].
 def validate_latitude(latitude):
   try:
     # check float
@@ -29,7 +29,7 @@ def validate_latitude(latitude):
   except ValueError, e:
     return {'status': False, 'error': 'latitude must be an integer, or decimal value.'}
 
-# validate_radius: check if radius is type 'float', and greater than 0.
+## validate_radius: check if radius is type 'float', and greater than 0.
 def validate_radius(radius):
   try:
     # check float
@@ -41,7 +41,7 @@ def validate_radius(radius):
   except ValueError, e:
     return {'status': False, 'error': 'radius must be an integer, or decimal value.'}
 
-# validate_daysBack: check if daysBack is type 'int', and greater than 0.
+## validate_daysBack: check if daysBack is type 'int', and greater than 0.
 def validate_daysBack(daysBack):
   try:
     # check int
