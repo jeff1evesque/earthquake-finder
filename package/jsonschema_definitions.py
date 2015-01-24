@@ -8,19 +8,19 @@ def jsonschema_request():
   schema = {
     'type': 'object',
     'properties': {
-      'gps_longitude': {
+      'longitude': {
         'type': 'number',
         'minimum': -180,
         'maximum': 180,
         'minLength': 1
       },
-      'gps_latitude': {
+      'latitude': {
         'type': 'number',
         'minimum': -90,
         'maxiuum': 90,
         'minLength': 1
       },
-      'gps_radius': {
+      'radius': {
         'type': 'number',
         'minimum': 0,
         'minLength': 1
@@ -29,7 +29,7 @@ def jsonschema_request():
         'type': 'integer',
         'minimum': 0,
         'minLength': 1
-      },
+      }
     }
   }
   return schema
