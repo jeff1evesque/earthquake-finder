@@ -19,7 +19,7 @@ def index():
 def json_scraper():
   if request.method == 'POST':
     # validate request
-    dict_request = { 'longitude': request.form['gps_longitude'], 'latitude': request.form['gps_latitude'], 'radius': request.form['gps_radius'], 'daysBack': request.form['daysBack'] }
+    dict_request = { 'longitude': request.form['gps_longitude'], 'latitude': request.form['gps_latitude'], 'radius': request.form['gps_radius'], 'daysBack': request.form['daysBack'], 'dataset': request.form['gps_dataset'] }
     flag_request = validate_request( dict_request )
 
     if flag_request['status']:
