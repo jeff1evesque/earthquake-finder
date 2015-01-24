@@ -47,6 +47,19 @@ cd /var/www/html/geolocation-web/
 git remote add upstream https://github.com/[YOUR-USERNAME]/geolocation-web.git
 ```
 
+###Flask
+
+Python's [Flask](http://flask.pocoo.org/), is a microframework based on [Werkzeug](http://werkzeug.pocoo.org/).  Specifically, it is a [web framework](http://en.wikipedia.org/wiki/Web_application_framework), which includes, a development server, integrated support for [unit testing](http://en.wikipedia.org/wiki/Unit_testing), [RESTful](http://en.wikipedia.org/wiki/Representational_state_transfer) API, and [Jinja2](http://jinja.pocoo.org/) templating.
+
+This project implements flask, by requiring [`app.py`](https://github.com/jeff1evesque/geolocation-web/blob/master/app.py) to be running:
+
+```
+cd /var/www/html/geolocation-js/
+python app.py
+```
+
+**Note:** ensure that the terminal window running the above script, is not used for any other purposes, while the web application is available to others.
+
 ###jQuery Validation
 
 [jQuery Validation](http://jqueryvalidation.org/) is a plugin that allows [client-side](http://en.wikipedia.org/wiki/Client-side) validation on [HTML form](http://www.w3.org/TR/html5/forms.html) elements. When a specific field fails validation, a label element is created as the next successive [DOM](http://en.wikipedia.org/wiki/Document_Object_Model) element, indicating the corresponding *error message*.
