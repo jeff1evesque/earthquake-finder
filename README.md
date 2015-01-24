@@ -11,7 +11,7 @@ This project provides an HTML [webform](http://en.wikipedia.org/wiki/Form_%28HTM
 
 When the user submits the webform (via [ajax](http://en.wikipedia.org/wiki/Ajax_%28programming%29)), the server determines the largest magnitude [earthquake](http://en.wikipedia.org/wiki/Earthquake) from the given dataset, relative to the supplied GPS coordinates, with respect to the acceptable radius, and number of days back from today (when webform is submitted).  The determined largest earthquake relative to the parameters supplied, is returned to the [web browser](http://en.wikipedia.org/wiki/Web_browser) (via ajax).
 
-**Note:** the external webpage (dataset), needs to adhere to the following json structure:
+**Note:** the external webpage (dataset), needs to adhere to the following [json](http://en.wikipedia.org/wiki/JSON#JSON_Schema) structure:
 
 ```json
 {
