@@ -60,3 +60,12 @@ Additional documentation:
 This project implements client-side validation within [`form_validator.js`](https://github.com/jeff1evesque/geolocation-web/blob/master/static/js/form_validator.js). Specific *how-to* can be found within the comments of the javascript [code](https://github.com/jeff1evesque/geolocation-web/blob/master/static/js/form_validator.js).
 
 ###JSON Schema
+
+[JSON Schema](https://pypi.python.org/pypi/jsonschema) provides an implementation to validate [JSON](http://en.wikipedia.org/wiki/JSON) data structures. When a specific element within the JSON structure fails validation, an [exception](https://wiki.python.org/moin/HandlingExceptions) is raised indicating the corresponding *error message*.
+
+Additional documentation:
+
+- [Understanding JSON Schema](http://spacetelescope.github.io/understanding-json-schema/)
+- [jsonschema](http://python-jsonschema.readthedocs.org/en/latest/)
+
+This project implements *JSON Schema* validation, as a backend-validation tool. Specifically, [`jsonschema_definitions.py`](https://github.com/jeff1evesque/geolocation-web/blob/master/package/jsonschema_definitions.py) defines acceptable *schemas* to validate against, while [`data_iterator.py`](https://github.com/jeff1evesque/geolocation-web/blob/master/package/dataset_iterator.py#L61) implements the validation schema.
