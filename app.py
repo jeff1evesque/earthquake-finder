@@ -33,7 +33,7 @@ def json_scraper():
 
       # return result(s) to browser
       return json.dumps(target_return)
-    else: return { 'data': None, 'error': flag_request['error'] }
+    else: return json.dumps({ 'data': None, 'error': flag_request['error'] })
 
 # Execute: run application directly, instead of import
 if __name__ == '__main__':
