@@ -69,3 +69,7 @@ Additional documentation:
 - [jsonschema](http://python-jsonschema.readthedocs.org/en/latest/)
 
 This project implements *JSON Schema* validation, as a backend-validation tool. Specifically, [`jsonschema_definitions.py`](https://github.com/jeff1evesque/geolocation-web/blob/master/package/jsonschema_definitions.py) defines acceptable *schemas* to validate against, while [`data_iterator.py`](https://github.com/jeff1evesque/geolocation-web/blob/master/package/dataset_iterator.py#L61) implements the validation schema.
+
+###Custom Validation
+
+When the HTML webform of the web-interface is submitted, the server-side receives as an array of text elements, corresponding to each `<input>` element.  To perform meaningful validation on the server-side, each array element is submitted to a respective function within [`validator_functions.py`](https://github.com/jeff1evesque/geolocation-web/blob/master/package/validator_functions.py).  This file attempts to cast variables to their equivalent type, then checks if the casted variable is within defined bounds.  If any custom validation fails, the corresponding function returns a `status: False`, preventing the primary [logic](https://github.com/jeff1evesque/geolocation-web/blob/master/app.py#L25) within `app.py` from executing. 
