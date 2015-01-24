@@ -1,8 +1,8 @@
 #!/usr/bin/python
 
 ## @json_scraper.py
-#  This file scrapes the content of an external webpage, and returns the
-#      parsed response to javascript (retriever_dataset.js) via AJAX.
+#  This file makes a request to an external webpage, and returns the json
+#      response content.
 import requests
 
 ## scrape: scrape the content of provided url.

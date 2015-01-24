@@ -2,24 +2,29 @@
 <html>
   <head>
     <meta charset='UTF-8'>
-    <title>Geolocation-JS</title>
+    <title>Geolocate Earthquake</title>
 
     <script src='static/js/jquery-2.1.1.js'></script>
+    <script src='static/js/jquery-validate.js'></script>
+    <script src='static/js/form_validator.js'></script>
+    <script src='static/js/ajax_graphic.js'></script>
     <script src='static/js/ajax_data.js'></script>
+
+    <link rel='stylesheet' href='static/css/style.css'>
   </head>
 
   <body>
     <form>
-      <fieldset>
+      <fieldset class='fieldset_coordinates'>
         <legend>GPS Coordinate</legend>
         <input type='text' name='gps_longitude' placeholder='Longitude Value' value='-122.166224'>
         <input type='text' name='gps_latitude' placeholder='Latitude Value' value='37.452255'>
       </fieldset>
-      <fieldset>
+      <fieldset class='fieldset_dataset'>
         <legend>Dataset</legend>
         <input type='text' name='gps_dataset' placeholder='Enter URL' value='http://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/all_month.geojson'>
       </fieldset>
-      <fieldset>
+      <fieldset class='fieldset_parameters'>
         <legend>Parameters</legend>
         <input type='text' name='gps_radius' placeholder='Acceptable Radius (mi)' value='100'>
         <input type='text' name='daysBack' placeholder='Search # Days Back' value='7'>

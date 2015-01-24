@@ -4,6 +4,7 @@
 from flask import Flask, render_template, request
 from package.json_scraper import scrape
 from package.dataset_iterator import Data_Iterator
+from package.validator_request import validate_request
 import json
 
 # Initialize: create flask instance
@@ -17,16 +18,22 @@ def index():
 @app.route('/json_scraper/', methods=['POST', 'GET'])
 def json_scraper():
   if request.method == 'POST':
-    # get dataset from external webpage
-    dataset = scrape(request.form['gps_dataset'])
+    # validate request
+    dict_request = { 'longitude': request.form['gps_longitude'], 'latitude': request.form['gps_latitude'], 'radius': request.form['gps_radius'], 'daysBack': request.form['daysBack'] }
+    flag_request = validate_request( dict_request )
 
-    # parse dataset for target(s) within specified parameters
-    target = Data_Iterator( dataset, request.form['gps_longitude'], request.form['gps_latitude'], request.form['gps_radius'], request.form['daysBack'] )
-    target.iterator()
-    target_return = target.get_largest_target()
+    if flag_request['status']:
+      # get dataset from external webpage
+      dataset = scrape(request.form['gps_dataset'])
 
-    # return result(s) to browser
-    return json.dumps(target_return)
+      # parse dataset for target(s) within specified parameters
+      target = Data_Iterator( dataset, dict_request )
+      target.iterator()
+      target_return = target.get_largest_target()
+
+      # return result(s) to browser
+      return json.dumps(target_return)
+    else: return json.dumps({ 'data': None, 'error': flag_request['error'] })
 
 # Execute: run application directly, instead of import
 if __name__ == '__main__':
