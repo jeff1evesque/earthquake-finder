@@ -48,4 +48,15 @@ git remote add upstream https://github.com/[YOUR-USERNAME]/geolocation-web.git
 
 ###jQuery Validation
 
+[jQuery Validation](http://jqueryvalidation.org/) is a plugin that allows [client-side](http://en.wikipedia.org/wiki/Client-side) validation on [HTML form](http://www.w3.org/TR/html5/forms.html) elements. When a specific field fails validation, a label element is created as the next successive [DOM](http://en.wikipedia.org/wiki/Document_Object_Model) element, indicating the corresponding *error message*.
+
+Additional documentation:
+
+- [jQuery Validation](http://jqueryvalidation.org/documentation/)
+- [Validator object](http://jqueryvalidation.org/category/validator/)
+- [Validator addMethod](http://jqueryvalidation.org/jQuery.validator.addMethod/)
+- [Validation example](http://stackoverflow.com/questions/10843399#answer-10843593)
+
+This project implements client-side validation within [`form_validator.js`](https://github.com/jeff1evesque/geolocation-web/blob/master/static/js/form_validator.js). Specific *how-to* can be found within the comments of the javascript [code](https://github.com/jeff1evesque/geolocation-web/blob/master/static/js/form_validator.js).
+
 ###JSON Schema
