@@ -21,7 +21,7 @@ def validate_request( origin ):
   if not validated_radius['status']: list_error.append( validated_radius['error'] )
   if not validated_daysBack['status']: list_error.append( validated_daysBack['error'] )
 
-  # return error
+  # return error(s)
   if len(list_error) > 0:
     return { 'status': False, 'error': list_error }
   else:
