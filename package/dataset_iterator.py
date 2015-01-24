@@ -40,14 +40,18 @@ class Data_Iterator:
 
       # create custom dataset instance, and validate
       data_instance = {'id': id, 'coordinates': coordinates, 'magnitude': magnitude, 'time': time, 'location': location}
-      data_check  = self.validate_dataset(data_instance)
+      validate_data = self.validate_dataset(data_instance)
 
-      # create coordinate variables
-      coordinate_1 = {'longitude': self.origin_longitude, 'latitude': self.origin_latitude}
-      coordinate_2 = {'longitude': coordinates[0], 'latitude': coordinates[1]}
+      # create coordinate variables, and validate
+      coordinate_1    = {'longitude': self.origin_longitude, 'latitude': self.origin_latitude}
+      coordinate_2    = {'longitude': coordinates[0], 'latitude': coordinates[1]}
+      validate_radius = self.validate_radius(coordinate_1, coordinate_2)
 
-      # append dataset instance to target list, if within radius, and timeframe
-      if self.validate_date(time) and data_check and self.validate_radius(coordinate_1, coordinate_2):
+      # validate timeframe
+      validate_time = self.validate_date(time)
+
+      # append dataset instance to target list
+      if validate_time and validate_data and validate_radius:
         self.target.append( {'id': id, 'coordinates': coordinates, 'magnitude': magnitude, 'time': time, 'location': location} )
 
   ## validate_dataset: validate subset(s) of given the dataset. The above 'iterator' method,
@@ -66,10 +70,11 @@ class Data_Iterator:
   #  @allowed_difference, number of days in milliseconds.
   def validate_date(self, earthquake_time):
     current_time       = int(round(time.time() * 1000))
-    allowed_difference = self.daysBack * 86400000
+    difference_allowed = self.daysBack * 86400000
+    difference_actual  = current_time - earthquake_time
 
-    if ( current_time - earthquake_time < allowed_difference ): return True
-    else: return False
+    if ( difference_actual < difference_allowed ): return {'status': True, 'difference_distance': difference_actual}
+    else: return {'status': False, 'difference_distance': difference_actual}
 
   ## validate_radius: validate given coordinates witin the supplied radius
   def validate_radius(self, p1, p2):
