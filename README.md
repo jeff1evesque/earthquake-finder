@@ -71,7 +71,7 @@ python app.py
 
 ####Request
 
-Python's [`Request`](http://docs.python-requests.org/) API, provides an elegant, yet easy implementation for making various [HTTP requests](http://en.wikipedia.org/wiki/Hypertext_Transfer_Protocol#Request_methods).  This project implements the `get` request to parse the `geojson` dataset, from a specified external webpage.
+Python's [`Request`](http://docs.python-requests.org/) API, provides an elegant, yet easy implementation for making various [HTTP requests](http://en.wikipedia.org/wiki/Hypertext_Transfer_Protocol#Request_methods).  This project implements the `get` request to parse the supplied `geojson` [dataset](http://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/all_month.geojson), from a specified external webpage.
 
 The following `request` implementation is made within [`json_scraper.py`](https://github.com/jeff1evesque/geolocation-web/blob/master/package/json_scraper.py):
 
