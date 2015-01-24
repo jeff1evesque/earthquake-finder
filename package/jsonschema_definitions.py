@@ -3,6 +3,31 @@
 ## @jsonschema_definitions.py
 #  This file contains various jsonschema definitions.
 
+## jsonschema_request(): contains the jsonschema for supplied parameters.
+def jsonschema_request():
+  schema = {
+    'type': 'object',
+    'properties': {
+      'gps_longitude': {
+        'type': 'integer',
+        'minLength': 1
+      },
+      'gps_latitude': {
+        'type': 'integer',
+        'minLength': 1
+      },
+      'gps_radius': {
+        'type': 'number',
+        'minLength': 1
+      },
+      'daysBack': {
+        'type': 'integer',
+        'minLength': 1
+      },
+    }
+  }
+  return schema
+
 ## jsonschema_data(): contains the jsonschema for each iterated element of the
 #                     geojson dataset.
 def jsonschema_data():
