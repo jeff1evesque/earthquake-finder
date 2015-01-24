@@ -8,7 +8,7 @@
 def validate_longitude(longitude):
   try:
     # check float
-    float(longitude)
+    longitude = float(longitude)
 
     # check bounds
     if -180 <= longitude <= 180: return {'status': True, 'error': None}
@@ -20,7 +20,7 @@ def validate_longitude(longitude):
 def validate_latitude(latitude):
   try:
     # check float
-    float(latitude)
+    latitude = float(latitude)
 
     # check bounds
     if -90 <= latitude <= 90: return {'status': True, 'error': None}
@@ -44,7 +44,7 @@ def validate_radius(radius):
 def validate_daysBack(daysBack):
   try:
     # check int
-    int(daysBack)
+    daysBack = int(daysBack)
 
     # check bounds
     if daysBack >= 0: return {'status': True, 'error': None}
