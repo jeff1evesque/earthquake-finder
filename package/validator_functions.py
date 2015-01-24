@@ -61,4 +61,4 @@ def validate_dataset_url(url):
 
   # check status code
   if status_code == 200: return {'status': True, 'error': None}
-  else: return {'status': False, 'error': url + ' is not valid, and accessible resource'} 
+  else: return {'status': False, 'error': url + ' is not an accessible resource'} 
