@@ -9,11 +9,11 @@ def jsonschema_request():
     'type': 'object',
     'properties': {
       'gps_longitude': {
-        'type': 'integer',
+        'type': 'number',
         'minLength': 1
       },
       'gps_latitude': {
-        'type': 'integer',
+        'type': 'number',
         'minLength': 1
       },
       'gps_radius': {
