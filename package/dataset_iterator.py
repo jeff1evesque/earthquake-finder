@@ -14,6 +14,9 @@ class Data_Iterator:
   ## constructor:
   #
   # @self.radius, the supplied radius (miles) is converted into meters
+  #
+  # Note: 'origin' pertains to parameters related to GPS coordinate supplied by the user,
+  #       not the GPS coordinates related to the dataset.
   def __init__(self, dataset, origin):
     self.target   = []
     self.dataset  = dataset
