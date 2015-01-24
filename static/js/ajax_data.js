@@ -17,6 +17,12 @@ $(function() {
       url: '/json_scraper/',
       data: form_data,
       beforeSend: function() {
+        $("form").validate({
+          submitHandler: function(form) {
+            $(form).ajaxSubmit();
+          }
+        });
+
         var spinner = new ajaxLoader( $(event.currentTarget) );
       }
     }).done(function(data) {
