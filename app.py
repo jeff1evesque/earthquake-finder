@@ -4,8 +4,7 @@
 from flask import Flask, render_template, request
 from package.json_scraper import scrape
 from package.dataset_iterator import Data_Iterator
-from jsonschema import validate
-from package.jsonschema_definitions import jsonschema_request
+from package.validator_request import validate_request
 import json
 
 # Initialize: create flask instance
