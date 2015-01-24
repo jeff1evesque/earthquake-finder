@@ -14,13 +14,13 @@ class Data_Iterator:
   ## constructor:
   #
   # @self.radius, the supplied radius (miles) is converted into meters
-  def __init__(self, dataset, longitude, latitude, radius, daysBack):
+  def __init__(self, dataset, origin):
     self.target   = []
     self.dataset  = dataset
-    self.origin_longitude = float(longitude)
-    self.origin_latitude  = float(latitude)
-    self.radius   = float(radius) * 1609.34
-    self.daysBack = int(daysBack)
+    self.origin_longitude = float(origin['longitude'])
+    self.origin_latitude  = float(origin['latitude'])
+    self.radius   = float(origin['radius']) * 1609.34
+    self.daysBack = int(origin['daysBack'])
 
     self.list_error = []
 
