@@ -69,6 +69,19 @@ python app.py
 
 **Note:** ensure that the terminal window running the above script, is not used for any other purposes, while the web application is available to others.
 
+####Request
+
+Python's [`Request`](http://docs.python-requests.org/) API, provides an elegant, yet easy implementation for making various [HTTP requests](http://en.wikipedia.org/wiki/Hypertext_Transfer_Protocol#Request_methods).  This project implements the `get` request to parse the `geojson` dataset, from a specified external webpage.
+
+The following `request` implementation is made within [`json_scraper.py`](https://github.com/jeff1evesque/geolocation-web/blob/master/package/json_scraper.py):
+
+```
+  response = requests.get(url)
+  content  = r.json()
+```
+
+**Note:** the above `json()` method, decodes the `response` as a json object.
+
 ###jQuery Validation
 
 [jQuery Validation](http://jqueryvalidation.org/) is a plugin that allows [client-side](http://en.wikipedia.org/wiki/Client-side) validation on [HTML form](http://www.w3.org/TR/html5/forms.html) elements. When a specific field fails validation, a label element is created as the next successive [DOM](http://en.wikipedia.org/wiki/Document_Object_Model) element, indicating the corresponding *error message*.
