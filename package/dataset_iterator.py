@@ -17,9 +17,9 @@ class Data_Iterator:
   #
   # Note: 'origin' pertains to parameters related to GPS coordinate supplied by the user,
   #       not the GPS coordinates related to the dataset.
-  def __init__(self, dataset, origin):
+  def __init__(self, origin):
     self.target   = []
-    self.dataset  = dataset
+    self.dataset  = origin['dataset']
     self.origin_longitude = float(origin['longitude'])
     self.origin_latitude  = float(origin['latitude'])
     self.radius   = float(origin['radius']) * 1609.34
