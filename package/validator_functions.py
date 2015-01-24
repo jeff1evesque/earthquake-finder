@@ -32,7 +32,7 @@ def validate_latitude(latitude):
 def validate_radius(radius):
   try:
     # check float
-    float(radius)
+    radius = float(radius)
 
     # check bounds
     if radius >= 0: return {'status': True, 'error': None}
