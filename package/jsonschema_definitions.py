@@ -10,18 +10,24 @@ def jsonschema_request():
     'properties': {
       'gps_longitude': {
         'type': 'number',
+        'minimum': -180,
+        'maximum': 180,
         'minLength': 1
       },
       'gps_latitude': {
         'type': 'number',
+        'minimum': -90,
+        'maxiuum': 90,
         'minLength': 1
       },
       'gps_radius': {
         'type': 'number',
+        'minimum': 0,
         'minLength': 1
       },
       'daysBack': {
         'type': 'integer',
+        'minimum': 0,
         'minLength': 1
       },
     }
