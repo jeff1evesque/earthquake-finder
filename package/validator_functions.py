@@ -3,6 +3,7 @@
 ## @validator_functions.py
 #  This file contains functions needed to  valididate longitude, latitude, radius, and
 #    daysBack values.
+import requests
 
 # validate_longitude: check if longitude is type 'float', and between [-180, 180].
 def validate_longitude(longitude):
@@ -51,3 +52,13 @@ def validate_daysBack(daysBack):
     else: return {'status': False, 'error': 'daysBack value: ' + str(daysBack) + ', must be greater than, or equal to 0'}
   except ValueError, e:
     return {'status': False, 'error': 'radius must be an integer value.'}
+
+## validate_dataset_url: check if url is valid, accessible resource.
+def validate_dataset_url(url):
+  # get status code
+  r = requests.get(url)
+  status_code = r.status_code
+
+  # check status code
+  if status_code == 200: return {'status': True, 'error': None}
+  else: return {'status': False, 'error': url + ' is not valid, and accessible resource'} 
