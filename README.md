@@ -49,14 +49,14 @@ git remote add upstream https://github.com/[YOUR-USERNAME]/geolocation-web.git
 
 ###Flask
 
-Python's [Flask](http://flask.pocoo.org/), is a microframework based on Werkzeug.  Specifically, it is a web framework, which includes, a development server, integrated support for unit testing, RESTful API, and Jinja2 templating. This project implements flask, by requiring [`app.py`](https://github.com/jeff1evesque/geolocation-web/blob/master/app.py) to be running before accessing the web application.
-
-To ensure the flask server is running, simply execute the following within a dedicated terminal console window:
+Python's [Flask](http://flask.pocoo.org/), is a microframework based on Werkzeug.  Specifically, it is a web framework, which includes, a development server, integrated support for unit testing, RESTful API, and Jinja2 templating. This project implements flask, by requiring [`app.py`](https://github.com/jeff1evesque/geolocation-web/blob/master/app.py) to be running before accessing the web application:
 
 ```
-cd /var/www/htmls/geolocation-js/
+cd /var/www/html/geolocation-js/
 python app.py
 ```
+
+**Note:** ensure that the terminal window running the above script, is not used for any other purposes, while the web application is available to others.
 
 ###jQuery Validation
 
