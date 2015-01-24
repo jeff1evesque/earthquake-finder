@@ -46,8 +46,6 @@ cd /var/www/html/geolocation-web/
 git remote add upstream https://github.com/[YOUR-USERNAME]/geolocation-web.git
 ```
 
-####GIT Submodule
-
 ###jQuery Validation
 
 ###JSON Schema
