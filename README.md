@@ -7,11 +7,75 @@ Earthquake Finder
 
 ###Overview
 
-This project provides an HTML [webform](http://en.wikipedia.org/wiki/Form_%28HTML%29), where users supply information such as their [GPS](http://en.wikipedia.org/wiki/Geographic_coordinate_system) coordinates ([longitude](http://en.wikipedia.org/wiki/Longitude), [latitude](http://en.wikipedia.org/wiki/Latitude)), a [geojson](http://en.wikipedia.org/wiki/GeoJSON) formatted [dataset](http://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/all_month.geojson) of earthquake instances, and restriction parameters (radius, days).
+This project provides an HTML [webform](http://en.wikipedia.org/wiki/Form_%28HTML%29), where users supply information such as their [GPS](http://en.wikipedia.org/wiki/Geographic_coordinate_system) coordinates ([longitude](http://en.wikipedia.org/wiki/Longitude), [latitude](http://en.wikipedia.org/wiki/Latitude)), a url to a [geojson](http://en.wikipedia.org/wiki/GeoJSON) formatted [dataset](http://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/all_month.geojson), and restriction parameters (radius, days).
 
 When the user submits the webform (via [ajax](http://en.wikipedia.org/wiki/Ajax_%28programming%29)), the server determines the largest magnitude [earthquake](http://en.wikipedia.org/wiki/Earthquake) from the given dataset, relative to the supplied GPS coordinates, with respect to the acceptable radius, and number of days back from today (when webform is submitted).  The determined largest earthquake relative to the parameters supplied, is returned to the [web browser](http://en.wikipedia.org/wiki/Web_browser) (via ajax).
 
-**Note:** for information regarding acceptable geojson structure, refer to the [Request](https://github.com/jeff1evesque/geolocation-web#request) section below.
+**Note:** the external webpage (dataset), needs to adhere to the following [json](http://en.wikipedia.org/wiki/JSON#JSON_Schema) structure:
+
+```json
+{
+	type: "FeatureCollection",
+	metadata: {
+		generated: Long Integer,
+		url: String,
+		title: String,
+		api: String,
+		count: Integer,
+		status: Integer
+	},
+	bbox: [
+		minimum longitude,
+		minimum latitude,
+		minimum depth,
+		maximum longitude,
+		maximum latitude,
+		maximum depth
+	],
+	features: [
+		{
+			type: "Feature",
+			properties: {
+				mag: Decimal,
+				place: String,
+				time: Long Integer,
+				updated: Long Integer,
+				tz: Integer,
+				url: String,
+				detail: String,
+				felt:Integer,
+				cdi: Decimal,
+				mmi: Decimal,
+				alert: String,
+				status: String,
+				tsunami: Integer,
+				sig:Integer,
+				net: String,
+				code: String,
+				ids: String,
+				sources: String,
+				types: String,
+				nst: Integer,
+				dmin: Decimal,
+				rms: Decimal,
+				gap: Decimal,
+				magType: String,
+				type: String
+			},
+			geometry: {
+				type: "Point",
+				coordinates: [
+					longitude,
+					latitude,
+					depth
+				]
+			},
+			id: String
+		},
+		…
+	]
+}
+```
 
 ##Installation
 
