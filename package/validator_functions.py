@@ -12,7 +12,7 @@ def validate_longitude(longitude):
 
     # check bounds
     if -180 <= longitude <= 180: return {'status': True, 'error': None}
-    else: return {'status': False, 'error': 'longitude value: ' . + str(longitude) + ', must be between [-180, 180]'}
+    else: return {'status': False, 'error': 'longitude value: ' + str(longitude) + ', must be between [-180, 180]'}
   except ValueError, e:
     return {'status': False, 'error': 'longitude must be an integer, or decimal value.'}
 
@@ -24,7 +24,7 @@ def validate_latitude(latitude):
 
     # check bounds
     if -90 <= latitude <= 90: return {'status': True, 'error': None}
-    else: return {'status': False, 'error': 'latitude value: ' . + str(latitude) + ', must be between [-90, 90]'}
+    else: return {'status': False, 'error': 'latitude value: ' + str(latitude) + ', must be between [-90, 90]'}
   except ValueError, e:
     return {'status': False, 'error': 'latitude must be an integer, or decimal value.'}
 
@@ -36,7 +36,7 @@ def validate_radius(radius):
 
     # check bounds
     if radius >= 0: return {'status': True, 'error': None}
-    else: return {'status': False, 'error': 'radius value: ' . + str(radius) + ', must be greater than, or equal to 0'}
+    else: return {'status': False, 'error': 'radius value: ' + str(radius) + ', must be greater than, or equal to 0'}
   except ValueError, e:
     return {'status': False, 'error': 'radius must be an integer, or decimal value.'}
 
@@ -48,6 +48,6 @@ def validate_daysBack(daysBack):
 
     # check bounds
     if daysBack >= 0: return {'status': True, 'error': None}
-    else: return {'status': False, 'error': 'daysBack value: ' . + str(daysBack) + ', must be greater than, or equal to 0'}
+    else: return {'status': False, 'error': 'daysBack value: ' + str(daysBack) + ', must be greater than, or equal to 0'}
   except ValueError, e:
     return {'status': False, 'error': 'radius must be an integer value.'}
