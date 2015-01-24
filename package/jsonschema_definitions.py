@@ -3,37 +3,6 @@
 ## @jsonschema_definitions.py
 #  This file contains various jsonschema definitions.
 
-## jsonschema_request(): contains the jsonschema for supplied parameters.
-def jsonschema_request():
-  schema = {
-    'type': 'object',
-    'properties': {
-      'longitude': {
-        'type': 'number',
-        'minimum': -180,
-        'maximum': 180,
-        'minLength': 1
-      },
-      'latitude': {
-        'type': 'number',
-        'minimum': -90,
-        'maxiuum': 90,
-        'minLength': 1
-      },
-      'radius': {
-        'type': 'number',
-        'minimum': 0,
-        'minLength': 1
-      },
-      'daysBack': {
-        'type': 'integer',
-        'minimum': 0,
-        'minLength': 1
-      }
-    }
-  }
-  return schema
-
 ## jsonschema_data(): contains the jsonschema for each iterated element of the
 #                     geojson dataset.
 def jsonschema_data():
