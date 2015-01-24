@@ -11,7 +11,71 @@ This project provides an HTML [webform](http://en.wikipedia.org/wiki/Form_%28HTM
 
 When the user submits the webform (via [ajax](http://en.wikipedia.org/wiki/Ajax_%28programming%29)), the server determines the largest magnitude [earthquake](http://en.wikipedia.org/wiki/Earthquake) from the given dataset, relative to the supplied GPS coordinates, with respect to the acceptable radius, and number of days back from today (when webform is submitted).  The determined largest earthquake relative to the parameters supplied, is returned to the [web browser](http://en.wikipedia.org/wiki/Web_browser) (via ajax).
 
-**Note:** for information regarding acceptable geojson structure, refer to the [Request](https://github.com/jeff1evesque/geolocation-web#request) section below.
+This project requires the dataset, from an external webpage to adhere to a specific json structure:
+
+```json
+{
+	type: "FeatureCollection",
+	metadata: {
+		generated: Long Integer,
+		url: String,
+		title: String,
+		api: String,
+		count: Integer,
+		status: Integer
+	},
+	bbox: [
+		minimum longitude,
+		minimum latitude,
+		minimum depth,
+		maximum longitude,
+		maximum latitude,
+		maximum depth
+	],
+	features: [
+		{
+			type: "Feature",
+			properties: {
+				mag: Decimal,
+				place: String,
+				time: Long Integer,
+				updated: Long Integer,
+				tz: Integer,
+				url: String,
+				detail: String,
+				felt:Integer,
+				cdi: Decimal,
+				mmi: Decimal,
+				alert: String,
+				status: String,
+				tsunami: Integer,
+				sig:Integer,
+				net: String,
+				code: String,
+				ids: String,
+				sources: String,
+				types: String,
+				nst: Integer,
+				dmin: Decimal,
+				rms: Decimal,
+				gap: Decimal,
+				magType: String,
+				type: String
+			},
+			geometry: {
+				type: "Point",
+				coordinates: [
+					longitude,
+					latitude,
+					depth
+				]
+			},
+			id: String
+		},
+		…
+	]
+}
+```
 
 ##Installation
 
