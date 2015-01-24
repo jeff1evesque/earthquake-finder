@@ -23,6 +23,7 @@ The following packages need to be installed through terminal in Ubuntu:
 # General Packages:
 sudo apt-get install python-pip
 sudo pip install Flask
+sudo pip install requests
 sudo pip install jsonschema
 ```
 
