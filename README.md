@@ -68,7 +68,7 @@ Additional documentation:
 - [Understanding JSON Schema](http://spacetelescope.github.io/understanding-json-schema/)
 - [jsonschema](http://python-jsonschema.readthedocs.org/en/latest/)
 
-This project implements *JSON Schema* validation, as a backend-validation tool. Specifically, [`jsonschema_definitions.py`](https://github.com/jeff1evesque/geolocation-web/blob/master/package/jsonschema_definitions.py) defines acceptable *schemas* to validate against, while [`data_iterator.py`](https://github.com/jeff1evesque/geolocation-web/blob/master/package/dataset_iterator.py#L61) implements the validation schema.
+This project implements *JSON Schema* validation, as a backend-validation tool. Specifically, [`jsonschema_definitions.py`](https://github.com/jeff1evesque/geolocation-web/blob/master/package/jsonschema_definitions.py) defines acceptable *schemas* to validate against, while [`data_iterator.py`](https://github.com/jeff1evesque/geolocation-web/blob/b6bbc65dae4d9c361ce7daa58a4a670ffac55ff5/package/dataset_iterator.py#L61) implements the validation schema.
 
 ###Custom Validation
 
