@@ -27,7 +27,7 @@ $(function() {
       $('.fieldset_parameters').after( '<p class="result">' + data + '</p>' );
     }).fail(function(jqXHR, textStatus, errorThrown) {
       $('.result').remove();
-      $('.fieldset_parameters').after( '<p class="result error">Error: Could not submit request. Please review the browser 'console.log' message(s)</p>' );
+      $('.fieldset_parameters').after( '<p class="result error">Error: Could not submit request. Please review the messages in the browser \'console.log\'</p>' );
       console.log('Error Thrown: '+errorThrown);
       console.log('Error Status: '+textStatus);
     });
