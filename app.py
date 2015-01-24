@@ -17,6 +17,10 @@ def index():
 @app.route('/json_scraper/', methods=['POST', 'GET'])
 def json_scraper():
   if request.method == 'POST':
+    # validate request
+    dict_request = { 'gps_longitude': request.form['gps_longitude'], 'gps_latitude': request.form['gps_latitude'], 'gps_radius': request.form['gps_radius'], 'daysBack': request.form['daysBack'] }
+    validate(dict_request, jsonschema_request())
+
     # get dataset from external webpage
     dataset = scrape(request.form['gps_dataset'])
 
