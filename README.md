@@ -1,7 +1,9 @@
-Machine Learning
+Earthquake Finder
 ================
 
 ###Definition
+
+[GeoJSON](http://en.wikipedia.org/wiki/GeoJSON) is an [open standard](http://en.wikipedia.org/wiki/Open_standard) format for encoding [simple geographical features](http://en.wikipedia.org/wiki/Simple_Features).  It specifically uses the [JSON standard](http://www.json.org/).
 
 ###Overview
 
