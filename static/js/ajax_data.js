@@ -32,6 +32,7 @@ $(function() {
       $('.result').remove();
       $('.fieldset_parameters').after( '<p class="result">' + data + '</p>' );
     }).fail(function(jqXHR, textStatus, errorThrown) {
+      $('form .ajax_overlay').fadeOut(200, function(){ $(this).remove() });
       $('.result').remove();
       $('.fieldset_parameters').after( '<p class="result error">Error: Could not submit request. Please review the messages in the browser \'console.log\'</p>' );
       console.log('Error Thrown: '+errorThrown);
