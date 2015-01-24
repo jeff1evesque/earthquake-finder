@@ -3,6 +3,8 @@ Machine Learning
 
 ###Definition
 
+[GeoJSON](http://en.wikipedia.org/wiki/GeoJSON) is an [open standard](http://en.wikipedia.org/wiki/Open_standard) format for encoding [simple geographical features](http://en.wikipedia.org/wiki/Simple_Features).  It specifically uses the [JSON standard](http://www.json.org/).
+
 ###Overview
 
 This project provides an HTML [webform](http://en.wikipedia.org/wiki/Form_%28HTML%29), where users supply information such as their [GPS](http://en.wikipedia.org/wiki/Geographic_coordinate_system) coordinates ([longitude](http://en.wikipedia.org/wiki/Longitude), [latitude](http://en.wikipedia.org/wiki/Latitude)), a [geojson](http://en.wikipedia.org/wiki/GeoJSON) formatted [dataset](http://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/all_month.geojson) of earthquake instances, and restriction parameters (radius, days).
