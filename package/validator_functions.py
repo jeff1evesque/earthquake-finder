@@ -1,6 +1,6 @@
 #!/usr/bin/python
 
-## @json_scraper.py
+## @validator_functions.py
 #  This file contains functions needed to  valididate longitude, latitude, radius, and
 #    daysBack values.
 
