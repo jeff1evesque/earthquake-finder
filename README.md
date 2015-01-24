@@ -1,4 +1,4 @@
-Machine Learning
+Earthquake Finder
 ================
 
 ###Definition
