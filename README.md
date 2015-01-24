@@ -5,6 +5,8 @@ Machine Learning
 
 ###Overview
 
+This project provides an HTML webform, where users can supply information such as their GPS coordinates (longitude, latitude), a dataset of earthquake instances, and restriction parameters (radius, days).  When the user submits the webform (via ajax), the server determines the largest magnitude earthquake from the supplied dataset, relative to the supplied GPS coordinates, with respect to the acceptable radius, and number of days back from today (when webform is submitted).  The determined largest earthquake relative to the parameters supplied, is returned to the browser (via ajax).
+
 ##Installation
 
 ###Linux Packages
