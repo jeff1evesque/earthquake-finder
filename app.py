@@ -19,15 +19,15 @@ def index():
 def json_scraper():
   if request.method == 'POST':
     # validate request
-    dict_request = { 'longitude': request.form['gps_longitude'], 'latitude': request.form['gps_latitude'], 'radius': request.form['gps_radius'], 'daysBack': request.form['daysBack'] }
+    dict_request = { 'longitude': request.form['gps_longitude'], 'latitude': request.form['gps_latitude'], 'radius': request.form['gps_radius'], 'daysBack': request.form['daysBack'], 'dataset': request.form['gps_dataset'] }
     flag_request = validate_request( dict_request )
 
     if flag_request['status']:
       # get dataset from external webpage
-      dataset = scrape(request.form['gps_dataset'])
+      dataset = scrape(dict_request['gps_dataset'])
 
       # parse dataset for target(s) within specified parameters
-      target = Data_Iterator( dataset, dict_request )
+      target = Data_Iterator( dict_request )
       target.iterator()
       target_return = target.get_largest_target()
 
