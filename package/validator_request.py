@@ -15,6 +15,12 @@ def validate_request( origin ):
   validate_radius    = validate_radius( origin['radius'] )
   validate_daysBack  = validate_daysBack( origin['daysBack'] )
 
+  # append error(s)
+  if not validate_longitude['status']: list_error.append( validate_longitude['error'] )
+  if not validate_latitude['status']: list_error.append( validate_latitude['error'] )
+  if not validate_radius['status']: list_error.append( validate_radius['error'] )
+  if not validate_daysBack['status']: list_error.append( validate_daysBack['error'] )
+
   # return error
   if len(list_error) > 0:
     return { 'status': False, 'error': list_error }
