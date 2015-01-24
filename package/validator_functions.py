@@ -3,8 +3,9 @@
 ## @validator_functions.py
 #  This file contains functions needed to  valididate longitude, latitude, radius, and
 #    daysBack values.
+import requests
 
-# validate_longitude: check if longitude is type 'float', and between [-180, 180].
+## validate_longitude: check if longitude is type 'float', and between [-180, 180].
 def validate_longitude(longitude):
   try:
     # check float
@@ -16,7 +17,7 @@ def validate_longitude(longitude):
   except ValueError, e:
     return {'status': False, 'error': 'longitude must be an integer, or decimal value.'}
 
-# validate_latitude: check if latitude is type 'float', and between [-90, 90].
+## validate_latitude: check if latitude is type 'float', and between [-90, 90].
 def validate_latitude(latitude):
   try:
     # check float
@@ -28,7 +29,7 @@ def validate_latitude(latitude):
   except ValueError, e:
     return {'status': False, 'error': 'latitude must be an integer, or decimal value.'}
 
-# validate_radius: check if radius is type 'float', and greater than 0.
+## validate_radius: check if radius is type 'float', and greater than 0.
 def validate_radius(radius):
   try:
     # check float
@@ -40,7 +41,7 @@ def validate_radius(radius):
   except ValueError, e:
     return {'status': False, 'error': 'radius must be an integer, or decimal value.'}
 
-# validate_daysBack: check if daysBack is type 'int', and greater than 0.
+## validate_daysBack: check if daysBack is type 'int', and greater than 0.
 def validate_daysBack(daysBack):
   try:
     # check int
@@ -51,3 +52,13 @@ def validate_daysBack(daysBack):
     else: return {'status': False, 'error': 'daysBack value: ' + str(daysBack) + ', must be greater than, or equal to 0'}
   except ValueError, e:
     return {'status': False, 'error': 'radius must be an integer value.'}
+
+## validate_dataset_url: check if url is valid, accessible resource.
+def validate_dataset_url(url):
+  # get status code
+  r = requests.get(url)
+  status_code = r.status_code
+
+  # check status code
+  if status_code == 200: return {'status': True, 'error': None}
+  else: return {'status': False, 'error': url + ' is not an accessible resource'} 
