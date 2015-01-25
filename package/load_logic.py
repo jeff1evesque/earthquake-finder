@@ -48,3 +48,9 @@ if __name == '__main__':
   radius    = raw_input('Enter radius: ')
   daysBack  = raw_input('Enter days back: ')
   dataset   = raw_input('Enter dataset url: ')
+
+  dict_request = { 'longitude': longitude, 'latitude': latitude, 'radius': radius, 'daysBack': daysBack, 'dataset': dataset }
+
+  # return largest magnitude earthquake
+  earthquake = earthquake_finder( dict_request )
+  print earthquake
