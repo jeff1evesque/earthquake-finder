@@ -8,3 +8,7 @@
 #
 #  Specifically, this file can be run via the command line, or via the supplied
 #      web-interface (app.py). Form more information, refer to the README.md.
+from package.json_scraper import scrape
+from package.dataset_iterator import Data_Iterator
+from package.validator_request import validate_request
+import json
