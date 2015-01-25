@@ -26,7 +26,7 @@ import json
 #          dd   : positive integer
 #          ee   : valid URL.
 def earthquake_finder(dict_request):
-  # validate provided parameters
+  # validate parameters
   flag_request = validate_request( dict_request )
 
   if flag_request['status']:
