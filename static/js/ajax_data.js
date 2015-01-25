@@ -58,7 +58,7 @@ $(function() {
       else result += '<tr><td class="result-index">error</td><td class="result-value">' + obj_return['error'] + '</td></tr>';
       result += '</table>';
       result += '<button type="button">Close</button>';
-      resutl += '</div>';
+      result += '</div>';
 
     // Append Return HTML
       $('body').append(result);
