@@ -24,7 +24,7 @@ def json_scraper():
 
     if flag_request['status']:
       # get dataset from external webpage
-      dataset = scrape(dict_request['gps_dataset'])
+      dataset = scrape(dict_request['dataset'])
 
       # parse dataset for target(s) within specified parameters
       target = Data_Iterator( dict_request )
