@@ -45,7 +45,7 @@ def earthquake_finder(dict_request):
     return json.dumps(target_return)
   else: return json.dumps({ 'data': None, 'error': flag_request['error'] })
 
-if __name == '__main__':
+if __name__ == '__main__':
   longitude = raw_input('Enter longitude [-180, 180]: ')
   while not validate_longitude( longitude )['status']:
     print validate_longitude( longitude )['error']
