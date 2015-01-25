@@ -41,3 +41,10 @@ def earthquake_finder(dict_request):
     # return result(s) to browser
     return json.dumps(target_return)
   else: return json.dumps({ 'data': None, 'error': flag_request['error'] })
+
+if __name == '__main__':
+  longitude = raw_input('Enter longitude [-180, 180]: ')
+  latitude  = raw_input('Enter latitude [-90, 90]: ')
+  radius    = raw_input('Enter radius: ')
+  daysBack  = raw_input('Enter days back: ')
+  dataset   = raw_input('Enter dataset url: ')
