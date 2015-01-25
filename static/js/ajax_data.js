@@ -30,7 +30,39 @@ $(function() {
       $('form .ajax_overlay').fadeOut(200, function(){ $(this).remove() });
     // Append Results
       $('.result').remove();
-      $('.fieldset_parameters').after( '<p class="result">' + data + '</p>' );
+
+    // Return Data
+      var id          = $.parseJSON(data).data.id;
+      var location    = $.parseJSON(data).data.location;
+      var magnitude   = $.parseJSON(data).data.magnitude;
+      var longitude   = $.parseJSON(data).data.coordinates[0];
+      var latitude    = $.parseJSON(data).data.coordinates[1];
+      var elevation   = $.parseJSON(data).data.coordinates[2];
+      var time        = $.parseJSON(data).data.time;
+      var error       = $.parseJSON(data).data.error;
+
+    // Return Object
+      var obj_return  = { id: id, location: location, magnitude: magnitude, longitude: longitude, latitude: latitude, elevation: elevation, time: time, error: error };
+
+    // Return HTML
+      var result = '<div class="result-container">';
+      result = '<table>';
+      result += '<tr><th>Property</th><th>Value</th></tr>';
+      if (obj_return.error != 'undefined') {
+        $.each( obj_return, function( index, value ) {
+          if (index != 'error') {
+            result += '<tr><td class="result-index">' + index + '</td><td class="result-value">' + value + '</td></tr>';
+          }
+        });
+      }
+      else result += '<tr><td class="result-index">error</td><td class="result-value">' + obj_return['error'] + '</td></tr>';
+      result += '</table>';
+      result += '<button type="button">Close</button>';
+      resutl += '</div>';
+
+    // Append Return HTML
+      $('body').append(result);
+
     }).fail(function(jqXHR, textStatus, errorThrown) {
       $('form .ajax_overlay').fadeOut(200, function(){ $(this).remove() });
       $('.result').remove();
