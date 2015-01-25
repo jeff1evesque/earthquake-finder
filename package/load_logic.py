@@ -66,7 +66,7 @@ if __name__ == '__main__':
     daysBack = raw_input('Enter days back: ')
 
   dataset = raw_input('Enter dataset url: ')
-  while not validate_dataset( dataset ):
+  while not validate_dataset_url( dataset ):
     print validate_dataset( dataset )['error']
     dataset = raw_input('Enter dataset url: ')
 
