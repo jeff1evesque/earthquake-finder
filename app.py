@@ -27,7 +27,7 @@ def json_scraper():
       dataset = scrape(dict_request['dataset'])
 
       # parse dataset for target(s) within specified parameters
-      target = Data_Iterator( dict_request )
+      target = Data_Iterator( dataset, dict_request )
       target.iterator()
       target_return = target.get_largest_target()
 
