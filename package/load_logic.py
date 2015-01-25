@@ -56,17 +56,17 @@ if __name__ == '__main__':
     latitude = raw_input('Enter latitude [-90, 90]: ')
 
   radius = raw_input('Enter radius: ')
-  while not validate_radius( radius ):
+  while not validate_radius( radius )['status']:
     print validate_radius( radius )['error']
     radius = raw_input('Enter radius: ')
 
   daysBack = raw_input('Enter days back: ')
-  while not validate_daysBack( daysBack ):
+  while not validate_daysBack( daysBack )['status']:
     print validate_daysBack( daysBack )['error']
     daysBack = raw_input('Enter days back: ')
 
   dataset = raw_input('Enter dataset url: ')
-  while not validate_dataset_url( dataset ):
+  while not validate_dataset_url( dataset )['status']:
     print validate_dataset( dataset )['error']
     dataset = raw_input('Enter dataset url: ')
 
