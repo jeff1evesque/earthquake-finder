@@ -11,6 +11,7 @@
 from package.json_scraper import scrape
 from package.dataset_iterator import Data_Iterator
 from package.validator_request import validate_request
+from package.validator_functions import validate_longitude, validate_latitude, validate_radius, validate_daysBack, validate_dataset_url
 import json
 
 ## earthquake_finder: determine largest magnitude earthquake using given parameters.
