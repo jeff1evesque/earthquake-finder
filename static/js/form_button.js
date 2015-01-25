@@ -7,12 +7,15 @@
  *               server.
  */
   var close_result = function() {
-    $('.result_container').remove();
+    $('body').on('click', '.close-result', function() {
+      $('.result-container').remove();
+      $('.close-result').remove();
+    });
   }
 
 /**
  * constructor
  */
   $(function() {
-    var closed_result = new close_container();
+    var closed_result = new close_result();
   });
