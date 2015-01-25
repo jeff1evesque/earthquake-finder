@@ -12,3 +12,21 @@ from package.json_scraper import scrape
 from package.dataset_iterator import Data_Iterator
 from package.validator_request import validate_request
 import json
+
+## earthquake_finder: determine largest magnitude earthquake using given parameters.
+def earthquake_finder(dict_request):
+  # validate provided parameters
+  flag_request = validate_request( dict_request )
+
+  if flag_request['status']:
+    # get dataset from external webpage
+    dataset = scrape(dict_request['dataset'])
+
+    # parse dataset for target(s) within specified parameters
+    target = Data_Iterator( dataset, dict_request )
+    target.iterator()
+    target_return = target.get_largest_target()
+
+    # return result(s) to browser
+    return json.dumps(target_return)
+  else: return json.dumps({ 'data': None, 'error': flag_request['error'] })
