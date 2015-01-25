@@ -14,5 +14,5 @@
  * constructor
  */
   $(function() {
-    var closed_result = new close_container();
+    var closed_result = new close_result();
   });
