@@ -77,6 +77,8 @@ When the user submits the webform (via [ajax](http://en.wikipedia.org/wiki/Ajax_
 }
 ```
 
+**Note:** the provided `time` parameter, from the above json dataset, has units of milliseconds since [epoch](http://en.wikipedia.org/wiki/Unix_time), and does not account for [leap seconds](http://en.wikipedia.org/wiki/Leap_second).
+
 ##Installation
 
 ###Linux Packages
