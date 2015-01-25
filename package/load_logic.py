@@ -14,6 +14,17 @@ from package.validator_request import validate_request
 import json
 
 ## earthquake_finder: determine largest magnitude earthquake using given parameters.
+#
+#  @dict_request, must be a dictionary with the following structure:
+#
+#      { 'longitude': aa.aa, 'latitude': bb.bb, 'radius': cc.cc,
+#        'daysBack': dd, 'dataset': ee }
+#
+#          aa.aa: float value between [-180, 180]
+#          bb.bb: float value between [-90, 90]
+#          cc.cc: positive float value
+#          dd   : positive integer
+#          ee   : valid URL.
 def earthquake_finder(dict_request):
   # validate provided parameters
   flag_request = validate_request( dict_request )
