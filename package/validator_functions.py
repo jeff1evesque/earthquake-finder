@@ -55,7 +55,7 @@ def validate_daysBack(daysBack):
 
 ## validate_dataset_url: check if url is valid, accessible resource.
 def validate_dataset_url(url):
-  # get status code
+  # request (get) given url, store json response content
   r = requests.get(url)
   status_code = r.status_code
 
