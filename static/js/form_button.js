@@ -7,12 +7,13 @@
  *               server.
  */
   var close_result = function() {
-    $('.result_container').remove();
+    $('.result-container').remove();
   }
 
 /**
  * constructor
  */
   $(function() {
+
     var closed_result = new close_result();
   });
