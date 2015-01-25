@@ -45,8 +45,7 @@ $(function() {
       var obj_return  = { id: id, location: location, magnitude: magnitude, longitude: longitude, latitude: latitude, elevation: elevation, time: time, error: error };
 
     // Return HTML
-      var result = '<div class="result-container">';
-      result = '<table>';
+      result = '<table class="result-container">';
       result += '<tr><th>Property</th><th>Value</th></tr>';
       if (obj_return.error != 'undefined') {
         $.each( obj_return, function( index, value ) {
@@ -58,7 +57,6 @@ $(function() {
       else result += '<tr><td class="result-index">error</td><td class="result-value">' + obj_return['error'] + '</td></tr>';
       result += '</table>';
       result += '<button type="button">Close</button>';
-      result += '</div>';
 
     // Append Return HTML
       $('body').append(result);
