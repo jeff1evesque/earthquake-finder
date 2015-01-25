@@ -45,27 +45,27 @@ def earthquake_finder(dict_request):
 
 if __name == '__main__':
   longitude = raw_input('Enter longitude [-180, 180]: ')
-  while not validate_longitude( longitude )['status']
+  while not validate_longitude( longitude )['status']:
     print validate_longitude( longitude )['error']
     longitude = raw_input('Enter longitude [-180, 180]: ')
 
   latitude = raw_input('Enter latitude [-90, 90]: ')
-  while not validate_latitude( latitude )['status']
+  while not validate_latitude( latitude )['status']:
     print validate_latitude( latitude )['error']
     latitude = raw_input('Enter latitude [-90, 90]: ')
 
   radius = raw_input('Enter radius: ')
-  while not validate_radius( radius )
+  while not validate_radius( radius ):
     print validate_radius( radius )['error']
     radius = raw_input('Enter radius: ')
 
   daysBack = raw_input('Enter days back: ')
-  while not validate_daysBack( daysBack )
+  while not validate_daysBack( daysBack ):
     print validate_daysBack( daysBack )['error']
     daysBack = raw_input('Enter days back: ')
 
   dataset = raw_input('Enter dataset url: ')
-  while not validate_dataset( dataset )
+  while not validate_dataset( dataset ):
     print validate_dataset( dataset )['error']
     dataset = raw_input('Enter dataset url: ')
 
