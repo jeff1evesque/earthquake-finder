@@ -182,4 +182,6 @@ By default, the provided webform in this project, prepopulates each `<input>` fi
 
 ###Web Interface
 
+This project provides a [web-interface](https://github.com/jeff1evesque/earthquake-finder/blob/master/templates/index.html), with default server configurations defined within the [`run()`](http://flask.pocoo.org/docs/0.10/api/#flask.Flask.run) method from [`app.py`](https://github.com/jeff1evesque/earthquake-finder/blob/master/app.py).
+
 ###Command Line
