@@ -14,7 +14,7 @@ $(function() {
   // Compute Largest Earthquake
     $.ajax({
       type: 'POST',
-      url: '/json_scraper/',
+      url: '/find-largest-earthquake/',
       data: form_data,
       beforeSend: function() {
         $("form").validate({
