@@ -197,6 +197,6 @@ This will issue a series of [`raw_input()`](https://docs.python.org/2/library/fu
 
 ###Testing
 
-Each python script, with the exception of [`app.py`](https://github.com/jeff1evesque/earthquake-finder/blob/master/app.py), contains a unix-like [she-bang](https://docs.python.org/3/using/windows.html#shebang-lines), `#! /usr/bin/python`.  This she-bang, allows the python script to be invoked directly, and allows each script to be tested, or debugged from the command line.
+Each python script, with the exception of [`app.py`](https://github.com/jeff1evesque/earthquake-finder/blob/master/app.py), contains a unix-like [she-bang](https://docs.python.org/3/using/windows.html#shebang-lines), `#! /usr/bin/python`.  This allows the python script to be invoked directly, which permits testing, or debugging from the command line.
 
 **Note:** like most linux-based scripting, the python she-bang, when defined, needs to be the first line within the script.
