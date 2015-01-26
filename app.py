@@ -16,7 +16,7 @@ app = Flask(__name__)
 def index():
   return render_template('index.html')
 
-@app.route('/json_scraper/', methods=['POST', 'GET'])
+@app.route('/find-largest-earthquake/', methods=['POST', 'GET'])
 def json_scraper():
   if request.method == 'POST':
     # get largest magnitude earthquake
