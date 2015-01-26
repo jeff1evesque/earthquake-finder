@@ -191,6 +191,6 @@ cd /var/www/html/earthquake-finder/
 python package/load_logic.py
 ```
 
-This will issue a series of [`raw_input()`](https://docs.python.org/2/library/functions.html#raw_input) prompts, when defined will help  the server determine the necessary response to be sent back to the client-side.
+This will issue a series of [`raw_input()`](https://docs.python.org/2/library/functions.html#raw_input) prompts, when defined, will determine the server calculation(s) to be sent back to the client-side.
 
 **Note:** the same USGS [data feed](http://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/all_month.geojson) url is recommended for the *dataset url* parameter within the command line.
