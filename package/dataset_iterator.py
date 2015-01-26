@@ -85,7 +85,7 @@ class Data_Iterator:
   def get_targets(self):
     if len(self.target) > 0: return {'data': self.target, 'error': None}
     else:
-      self.list_error.append( {'class': 'Data_Iterator', 'method': 'get_targets', 'msg': 'no instance earthquake instance recorded'} )
+      self.list_error.append( {'class': 'Data_Iterator', 'method': 'get_targets', 'msg': 'no earthquake instance recorded'} )
       return {'data': None, 'error': self.list_error}
 
   ## get_largest_target: return largest single earthquake within the supplied parameters.
@@ -94,5 +94,5 @@ class Data_Iterator:
       largest_magnitude = max( self.target, key=lambda x:x['magnitude'] )
       return {'data': largest_magnitude, 'error': None}
     else:
-      self.list_error.append( {'class': 'Data_Iterator', 'method': 'get_largest_target', 'msg': 'no instance earthquake instance recorded'} )
+      self.list_error.append( {'class': 'Data_Iterator', 'method': 'get_largest_target', 'msg': 'no earthquake instance recorded'} )
       return {'data': None, 'error': self.list_error}
