@@ -21,7 +21,7 @@ def json_scraper():
   if request.method == 'POST':
     # get largest magnitude earthquake
     dict_request = { 'longitude': request.form['gps_longitude'], 'latitude': request.form['gps_latitude'], 'radius': request.form['gps_radius'], 'daysBack': request.form['daysBack'], 'dataset': request.form['gps_dataset'] }
-    return earthquake_finder()
+    return earthquake_finder(dict_request)
 
 # Execute: run application directly, instead of import
 if __name__ == '__main__':
