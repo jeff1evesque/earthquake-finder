@@ -194,3 +194,9 @@ python package/load_logic.py
 This will issue a series of [`raw_input()`](https://docs.python.org/2/library/functions.html#raw_input) prompts, when defined, will determine the server calculation(s) to be sent back to the client-side.
 
 **Note:** the same USGS [data feed](http://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/all_month.geojson) url is recommended for the *dataset url* parameter within the command line.
+
+###Testing
+
+Each python script, with the exception of [`app.py`](https://github.com/jeff1evesque/earthquake-finder/blob/master/app.py), contains a unix-like [she-bang](https://docs.python.org/3/using/windows.html#shebang-lines), `#! /usr/bin/python`.  This she-bang, allows the python script to be invoked directly, and allows each script to be tested, or debugged from the command line.
+
+**Note:** like most linux-based scripting, the python she-bang, when defined, needs to be the first line within the script.
