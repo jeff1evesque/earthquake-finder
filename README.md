@@ -175,3 +175,28 @@ This project implements *JSON Schema* validation, as a backend-validation tool. 
 ###Custom Validation
 
 When the HTML webform of the web-interface is submitted, the server-side receives an array of text elements, corresponding to each form `<input>` element.  To perform meaningful validation on the server-side, each array element is submitted to a respective function within [`validator_functions.py`](https://github.com/jeff1evesque/earthquake-finder/blob/master/package/validator_functions.py).  This file attempts to cast variables to their equivalent type, with the exception of the dataset url case.  If casting does not raise an error, variables are checked against their defined bounds.  If any custom validation fails, the corresponding function returns `status: False`.  This prevents the remaining logic of `json_scraper` within [`app.py`](https://github.com/jeff1evesque/earthquake-finder/blob/master/app.py) from executing. 
+
+##Testing / Execution
+
+###Web Interface
+
+This project provides a [web-interface](https://github.com/jeff1evesque/earthquake-finder/blob/master/templates/index.html), consisting of a webform, with prepopulated `<input>` fields.  Specifically, the dataset field prepopulates to a USGS [data feed](http://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/all_month.geojson) url, which updates its content on a regular cycle.  If the data feed url changes, either change the default form value, or use an older (from 01/20/2015) data feed, versioned within the [`data/`](https://github.com/jeff1evesque/geolocation-web/tree/master/data) directory of this repository.
+
+###Command Line
+
+An alternative to the *web-interface*, is to use the command line API.  This can be accomplished by opening up a terminal window, and typing the following:
+
+```
+cd /var/www/html/earthquake-finder/
+python package/load_logic.py
+```
+
+This will issue a series of [`raw_input()`](https://docs.python.org/2/library/functions.html#raw_input) prompts, when defined, will determine the server calculation(s) to be sent back to the client-side.
+
+**Note:** the same USGS [data feed](http://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/all_month.geojson) url is recommended for the *dataset url* parameter within the command line.
+
+###Testing
+
+Each python script, with the exception of [`app.py`](https://github.com/jeff1evesque/earthquake-finder/blob/master/app.py), contains a unix-like [she-bang](https://docs.python.org/3/using/windows.html#shebang-lines), `#! /usr/bin/python`.  This allows the python script to be invoked directly, which permits testing, or debugging from the command line.
+
+**Note:** like most linux-based scripting, the python she-bang, when defined, needs to be the first line within the script.
