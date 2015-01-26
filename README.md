@@ -175,3 +175,9 @@ This project implements *JSON Schema* validation, as a backend-validation tool. 
 ###Custom Validation
 
 When the HTML webform of the web-interface is submitted, the server-side receives an array of text elements, corresponding to each form `<input>` element.  To perform meaningful validation on the server-side, each array element is submitted to a respective function within [`validator_functions.py`](https://github.com/jeff1evesque/earthquake-finder/blob/master/package/validator_functions.py).  This file attempts to cast variables to their equivalent type, with the exception of the dataset url case.  If casting does not raise an error, variables are checked against their defined bounds.  If any custom validation fails, the corresponding function returns `status: False`.  This prevents the remaining logic of `json_scraper` within [`app.py`](https://github.com/jeff1evesque/earthquake-finder/blob/master/app.py) from executing. 
+
+##Testing / Execution
+
+###Web Interface
+
+###Command Line
