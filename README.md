@@ -184,11 +184,13 @@ This project provides a [web-interface](https://github.com/jeff1evesque/earthqua
 
 ###Command Line
 
-An alternative to the *web-interface*, is to use the command line API.  This can be accomplished by opening up terminal window, and typing the following:
+An alternative to the *web-interface*, is to use the command line API.  This can be accomplished by opening up a terminal window, and typing the following:
 
 ```
 cd /var/www/html/earthquake-finder/
 python package/load_logic.py
 ```
 
-which will issue a series of [`raw_input()`](https://docs.python.org/2/library/functions.html#raw_input) prompts.
+This will issue a series of [`raw_input()`](https://docs.python.org/2/library/functions.html#raw_input) prompts, when defined will help  the server determine the necessary response to be sent back to the client-side.
+
+**Note:** the same USGS [data feed](http://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/all_month.geojson) is recommended for the *dataset url* parameter.
