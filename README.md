@@ -182,7 +182,11 @@ When the HTML webform of the web-interface is submitted, the server-side receive
 
 ###Web Interface
 
-This project provides a [web-interface](https://github.com/jeff1evesque/earthquake-finder/blob/master/templates/index.html), consisting of a webform, with prepopulated `<input>` fields.  Specifically, the dataset field prepopulates to a USGS [data feed](http://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/all_month.geojson) url, which updates its content on a regular cycle.  If the data feed url changes, either change the default form value, or use an older (from 01/20/2015) data feed, versioned within the [`data/`](https://github.com/jeff1evesque/geolocation-web/tree/master/data) directory of this repository.
+This project provides a [web-interface](https://github.com/jeff1evesque/earthquake-finder/blob/master/templates/index.html), consisting of a webform, with prepopulated `<input>` fields:
+
+http://localhost:5000/
+
+Specifically, the dataset field prepopulates to a USGS [data feed](http://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/all_month.geojson) url, which updates its content on a regular cycle.  If the data feed url changes, either change the default form value, or use an older (from 01/20/2015) data feed, versioned within the [`data/`](https://github.com/jeff1evesque/geolocation-web/tree/master/data) directory of this repository.
 
 ###Command Line
 
