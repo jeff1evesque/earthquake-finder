@@ -133,7 +133,7 @@ cd /var/www/html/earthquake-finder/
 python app.py
 ```
 
-The [`run()`](http://flask.pocoo.org/docs/0.10/api/#flask.Flask.run) method from `app.py`, runs the local developement server, and has the ability of defining the host, port, debug feature, and several other options. If none of these attributes are passed into the method, the server will default to running `localhost` on port `5000`, with no `debug` features enabled.
+**Note:** the [`run()`](http://flask.pocoo.org/docs/0.10/api/#flask.Flask.run) method within `app.py`, runs the local developement server, and has the ability of defining the host, port, debug feature, and several other options. If none of these attributes are passed into the method, the server will default to running `localhost` on port `5000`, with no `debug` features enabled.
 
 **Note:** when running the above `app.py`, ensure that the terminal window is not used for any other processes, while the web application is available to others.
 
