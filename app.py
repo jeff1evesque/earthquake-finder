@@ -6,7 +6,6 @@ from package.json_scraper import scrape
 from package.dataset_iterator import Data_Iterator
 from package.validator_request import validate_request
 from package.load_logic import earthquake_finder
-import json
 
 # Initialize: create flask instance
 app = Flask(__name__)
