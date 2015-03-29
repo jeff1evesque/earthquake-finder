@@ -44,6 +44,9 @@ $(function() {
     // Return Object
       var obj_return  = { id: id, location: location, magnitude: magnitude, longitude: longitude, latitude: latitude, elevation: elevation, time: time, error: error };
 
+    // Remove previous results
+      $('.result-container').remove();
+
     // Return HTML
       result = '<table class="result-container">';
       result += '<tr><th>Property</th><th>Value</th></tr>';
