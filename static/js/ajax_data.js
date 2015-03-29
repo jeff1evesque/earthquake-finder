@@ -46,6 +46,7 @@ $(function() {
 
     // Remove previous results
       $('.result-container').remove();
+      $('.close-result').remove();
 
     // Return HTML
       result = '<table class="result-container">';
