@@ -4,7 +4,7 @@
 #  This file iterates a given dataset, and returns a list of dict records, of earthquakes
 #      within the supplied parameters (i.e. radius, timeframe).
 import json, time
-from jsonschema import validate
+from jsonschema.validators import Draft4Validator
 from package.jsonschema_definitions import jsonschema_data
 from package.haversine import get_distance
 
@@ -58,7 +58,7 @@ class Data_Iterator:
   #                    implements this method.
   def validate_dataset(self, data_instance):
     try:
-      validate(data_instance, jsonschema_data())
+      Draft4Validator(jsonschema_data()).validate(data_instance)
       return True
     except Exception, error:
       self.list_error.append( {'class': 'Data_Iterator', 'method': 'validate_dataset', 'msg': error} )
