@@ -4,7 +4,7 @@
 #  This file iterates a given dataset, and returns a list of dict records, of earthquakes
 #      within the supplied parameters (i.e. radius, timeframe).
 import json, time
-from jsonschema import validate
+from jsonschema.validators import Draft4Validator
 from package.jsonschema_definitions import jsonschema_data
 from package.haversine import get_distance
 
