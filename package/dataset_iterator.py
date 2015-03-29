@@ -58,7 +58,7 @@ class Data_Iterator:
   #                    implements this method.
   def validate_dataset(self, data_instance):
     try:
-      validate(data_instance, jsonschema_data())
+      Draft4Validator(jsonschema_data()).validate(data_instance)
       return True
     except Exception, error:
       self.list_error.append( {'class': 'Data_Iterator', 'method': 'validate_dataset', 'msg': error} )
