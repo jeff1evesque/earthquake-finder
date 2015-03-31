@@ -28,7 +28,11 @@ $(function() {
     }).done(function(data) {
     // Remove AJAX Overlay
       $('form .ajax_overlay').fadeOut(200, function(){ $(this).remove() });
-    // Append Results
+
+    // Remove previous results
+      $('.result-container').remove();
+      $('.close-result').remove();
+      $('.result-error').remove();
       $('.result').remove();
 
     // Return Data
@@ -43,10 +47,6 @@ $(function() {
 
     // Return Object
       var obj_return  = { id: id, location: location, magnitude: magnitude, longitude: longitude, latitude: latitude, elevation: elevation, time: time, error: error };
-
-    // Remove previous results
-      $('.result-container').remove();
-      $('.close-result').remove();
 
     // Return HTML
       result = '<table class="result-container">';
