@@ -41,8 +41,11 @@ def earthquake_finder(dict_request):
     target_return = target.get_largest_target()
 
     # return result(s) to browser
-    return json.dumps(target_return)
-  else: return json.dumps({ 'data': None, 'error': flag_request['error'] })
+    if target_return['data']:
+      return json.dumps(target_return)
+    else:
+      return json.dumps({'data': None})
+  else: return json.dumps({'data': None, 'error': flag_request['error']})
 
 if __name__ == '__main__':
   longitude = raw_input('Enter longitude [-180, 180]: ')

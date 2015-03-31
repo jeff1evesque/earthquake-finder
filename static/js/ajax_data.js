@@ -36,29 +36,35 @@ $(function() {
       $('.result').remove();
 
     // Return Data
-      var id          = $.parseJSON(data).data.id;
-      var location    = $.parseJSON(data).data.location;
-      var magnitude   = $.parseJSON(data).data.magnitude;
-      var longitude   = $.parseJSON(data).data.coordinates[0];
-      var latitude    = $.parseJSON(data).data.coordinates[1];
-      var elevation   = $.parseJSON(data).data.coordinates[2];
-      var time        = $.parseJSON(data).data.time;
-      var error       = $.parseJSON(data).data.error;
+      var return_data = $.parseJSON(data).data
+      if (return_data != null) {
+        var id         = return_data.id;
+        var location   = return_data.location;
+        var magnitude  = return_data.magnitude;
+        var longitude  = return_data.coordinates[0];
+        var latitude   = return_data.coordinates[1];
+        var elevation  = return_data.coordinates[2];
+        var time       = return_data.time;
+        var error      = return_data.error;
+      }
 
     // Return Object
       var obj_return  = { id: id, location: location, magnitude: magnitude, longitude: longitude, latitude: latitude, elevation: elevation, time: time, error: error };
 
     // Return HTML
       result = '<table class="result-container">';
-      result += '<tr><th>Property</th><th>Value</th></tr>';
-      if (obj_return.error != 'undefined') {
-        $.each( obj_return, function( index, value ) {
-          if (index != 'error') {
-            result += '<tr><td class="result-index">' + index + '</td><td class="result-value">' + value + '</td></tr>';
-          }
-        });
+      if (return_data != null) {
+        result += '<tr><th>Property</th><th>Value</th></tr>';
+        if (obj_return.error != 'undefined') {
+          $.each( obj_return, function( index, value ) {
+            if (index != 'error') {
+              result += '<tr><td class="result-index">' + index + '</td><td class="result-value">' + value + '</td></tr>';
+            }
+          });
+        }
+        else result += '<tr><td class="result-index">error</td><td class="result-value">' + obj_return['error'] + '</td></tr>';
       }
-      else result += '<tr><td class="result-index">error</td><td class="result-value">' + obj_return['error'] + '</td></tr>';
+      else result += '<tr><td class="result-value">No earthquakes found using supplied parameters</td></tr>';
       result += '</table>';
       result += '<button type="button" class="close-result">Close</button>';
 
